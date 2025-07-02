@@ -1,0 +1,22 @@
+2025-05-19 22:22:20,079 INFO [tkzc]                 Book.java:562  | 1 sheet in /Users/amber/Downloads/music_evaluator/data/uploads/tkzc.jpeg
+2025-05-19 22:22:20,152 INFO []                 Book.java:2531 | Stored /book.xml
+2025-05-19 22:22:20,153 INFO []                 Book.java:2491 | Book stored as data/output/tkzc.omr
+2025-05-19 22:22:20,156 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-05-19 22:22:20,157 INFO [tkzc]       StepMonitoring.java:98   | LOAD
+2025-05-19 22:22:20,188 INFO [tkzc]            SheetStub.java:1268 | Loaded image #1 1080x1439 from /Users/amber/Downloads/music_evaluator/data/uploads/tkzc.jpeg
+2025-05-19 22:22:20,189 INFO [tkzc]            ImageUtil.java:124  | Converting max RGB to gray
+2025-05-19 22:22:20,235 INFO [tkzc]       StepMonitoring.java:98   | BINARY
+2025-05-19 22:22:20,350 INFO [tkzc]       StepMonitoring.java:98   | SCALE
+2025-05-19 22:22:20,360 WARN [tkzc]            SheetStub.java:412  | tkzc   With a too low interline value of 8 pixels,  either this sheet contains no multi-line staves,  or the picture resolution is too low (try 300 DPI).   This interline value is NOT RELIABLE!
+2025-05-19 22:22:20,360 INFO [tkzc]                 Book.java:545  | Created scores: []
+2025-05-19 22:22:20,360 INFO [tkzc]            SheetStub.java:1186 | Sheet tkzc flagged as invalid.
+2025-05-19 22:22:20,360 INFO [tkzc]            SheetStub.java:1394 | StepException cause detected in [LOAD, BINARY, SCALE, GRID, HEADERS, STEM_SEEDS, BEAMS, LEDGERS, HEADS, STEMS, REDUCTION, CUE_BEAMS, TEXTS, MEASURES, CHORDS, CURVES, SYMBOLS, LINKS, RHYTHMS, PAGE]
+2025-05-19 22:22:20,360 INFO [tkzc]                 Book.java:2550 | Book{tkzc} storing
+2025-05-19 22:22:20,369 INFO [tkzc]                 Book.java:2531 | Stored /book.xml
+2025-05-19 22:22:20,395 INFO [tkzc]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-05-19 22:22:20,478 INFO [tkzc]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-05-19 22:22:20,478 INFO [tkzc]                 Book.java:2491 | Book stored as data/output/tkzc.omr
+2025-05-19 22:22:20,479 INFO [tkzc]            SheetStub.java:1644 | Disposed sheet
+2025-05-19 22:22:20,494 INFO [tkzc]                 Book.java:2018 | End of Stub#1 memory: 10,630,264
+2025-05-19 22:22:20,494 INFO [tkzc]                 Book.java:2025 | Book processed.
+2025-05-19 22:22:20,494 INFO [tkzc]                 Book.java:599  | Could not export since transcription did not complete successfully

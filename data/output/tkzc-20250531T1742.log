@@ -1,0 +1,67 @@
+2025-05-31 17:42:47,861 INFO [tkzc]                 Book.java:562  | 1 sheet in /Users/amber/Downloads/music_evaluator/data/uploads/tkzc.png
+2025-05-31 17:42:47,927 INFO []                 Book.java:2531 | Stored /book.xml
+2025-05-31 17:42:47,927 INFO []                 Book.java:2491 | Book stored as data/output/tkzc.omr
+2025-05-31 17:42:47,931 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-05-31 17:42:47,931 INFO [tkzc]       StepMonitoring.java:98   | LOAD
+2025-05-31 17:42:47,976 INFO [tkzc]            SheetStub.java:1268 | Loaded image #1 1600x2262 from /Users/amber/Downloads/music_evaluator/data/uploads/tkzc.png
+2025-05-31 17:42:47,977 INFO [tkzc]            ImageUtil.java:124  | Converting max RGB to gray
+2025-05-31 17:42:48,058 INFO [tkzc]       StepMonitoring.java:98   | BINARY
+2025-05-31 17:42:48,193 INFO [tkzc]       StepMonitoring.java:98   | SCALE
+2025-05-31 17:42:48,206 INFO [tkzc]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 13 interline
+2025-05-31 17:42:48,206 INFO [tkzc]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.44 of [4..13] range at 209% of needed quorum
+2025-05-31 17:42:48,207 INFO [tkzc]            ScaleStep.java:65   | Scale{ interline(13,13,14) line(2,2,3) beam(8)}
+2025-05-31 17:42:48,208 INFO [tkzc]       StepMonitoring.java:98   | GRID
+2025-05-31 17:42:48,378 INFO [tkzc]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-05-31 17:42:48,399 INFO [tkzc]    ClustersRetriever.java:328  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,13,14)
+2025-05-31 17:42:48,453 INFO [tkzc]            PeakGraph.java:310  | Systems: #1[1, 2, 3] #2[4, 5, 6] #3[7, 8, 9] #4[10, 11, 12]
+2025-05-31 17:42:48,469 INFO [tkzc]        BarsRetriever.java:1304 | System#1
+2025-05-31 17:42:48,469 INFO [tkzc]        BarsRetriever.java:1307 |    PartGroup{brace number:1 barline:true staves:2-3}
+2025-05-31 17:42:48,469 INFO [tkzc]        BarsRetriever.java:1304 | System#2
+2025-05-31 17:42:48,469 INFO [tkzc]        BarsRetriever.java:1307 |    PartGroup{brace number:1 barline:true staves:5-6}
+2025-05-31 17:42:48,470 INFO [tkzc]        BarsRetriever.java:1304 | System#3
+2025-05-31 17:42:48,470 INFO [tkzc]        BarsRetriever.java:1307 |    PartGroup{brace number:1 barline:true staves:8-9}
+2025-05-31 17:42:48,470 INFO [tkzc]        BarsRetriever.java:1304 | System#4
+2025-05-31 17:42:48,470 INFO [tkzc]        BarsRetriever.java:1307 |    PartGroup{brace number:1 barline:true staves:11-12}
+2025-05-31 17:42:48,574 INFO [tkzc]        SystemManager.java:779  | 3 parts along 4 systems
+2025-05-31 17:42:48,574 INFO [tkzc]                 Book.java:545  | Created scores: [{Score 1}]
+2025-05-31 17:42:48,574 INFO [tkzc]       StepMonitoring.java:98   | HEADERS
+2025-05-31 17:42:48,685 INFO [tkzc]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-05-31 17:42:48,686 INFO [tkzc]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Downloads/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-05-31 17:42:48,945 INFO [tkzc]       StepMonitoring.java:98   | STEM_SEEDS
+2025-05-31 17:42:49,015 INFO [tkzc]        StemSeedsStep.java:86   | stem(3 max:4)
+2025-05-31 17:42:49,037 INFO [tkzc]       StepMonitoring.java:98   | BEAMS
+2025-05-31 17:42:49,678 INFO [tkzc]       StepMonitoring.java:98   | LEDGERS
+2025-05-31 17:42:49,763 INFO [tkzc]       StepMonitoring.java:98   | HEADS
+2025-05-31 17:42:50,763 INFO [tkzc]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[R:-0.5] NOTEHEAD_BLACK[L:-0.2,R:-0.5]}
+2025-05-31 17:42:50,763 INFO [tkzc]       StepMonitoring.java:98   | STEMS
+2025-05-31 17:42:50,958 INFO [tkzc]       StepMonitoring.java:98   | REDUCTION
+2025-05-31 17:42:50,997 INFO [tkzc]        ReductionStep.java:105  | Stems free length median value: 44 pixels, 3.4 interlines
+2025-05-31 17:42:50,998 INFO [tkzc]       StepMonitoring.java:98   | CUE_BEAMS
+2025-05-31 17:42:50,998 INFO [tkzc]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-05-31 17:42:50,998 INFO [tkzc]       StepMonitoring.java:98   | TEXTS
+2025-05-31 17:42:51,036 WARN [tkzc]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-05-31 17:42:51,036 INFO [tkzc]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-05-31 17:42:51,040 INFO [tkzc]       StepMonitoring.java:98   | MEASURES
+2025-05-31 17:42:51,044 INFO [tkzc]                 Page.java:307  | 16 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 4 in system#4]
+2025-05-31 17:42:51,044 INFO [tkzc]       StepMonitoring.java:98   | CHORDS
+2025-05-31 17:42:51,051 INFO [tkzc]       StepMonitoring.java:98   | CURVES
+2025-05-31 17:42:51,449 INFO [tkzc]         SlursBuilder.java:240  | Slurs: 0
+2025-05-31 17:42:51,452 INFO [tkzc]      SegmentsBuilder.java:155  | Segments: 7
+2025-05-31 17:42:51,453 INFO [tkzc]       StepMonitoring.java:98   | SYMBOLS
+2025-05-31 17:42:51,705 INFO [tkzc]       StepMonitoring.java:98   | LINKS
+2025-05-31 17:42:51,711 INFO [tkzc]        SymbolsLinker.java:257  | No chord linked to OctaveShiftInter#3450{(0.444) staff:6 OTTAVA BASSA}
+2025-05-31 17:42:51,716 INFO [tkzc]        SymbolsLinker.java:257  | No chord linked to OctaveShiftInter#3486{(0.444) staff:7 OTTAVA ALTA}
+2025-05-31 17:42:51,727 INFO [tkzc]       StepMonitoring.java:98   | RHYTHMS
+2025-05-31 17:42:51,753 INFO [tkzc]       StepMonitoring.java:98   | PAGE
+2025-05-31 17:42:51,756 INFO [tkzc]                 Book.java:2550 | Book{tkzc} storing
+2025-05-31 17:42:51,774 INFO [tkzc]                 Book.java:2531 | Stored /book.xml
+2025-05-31 17:42:51,817 INFO [tkzc]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-05-31 17:42:52,147 INFO [tkzc]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-05-31 17:42:52,147 INFO [tkzc]                 Book.java:2491 | Book stored as data/output/tkzc.omr
+2025-05-31 17:42:52,148 INFO [tkzc]            SheetStub.java:1644 | Disposed sheet
+2025-05-31 17:42:52,171 INFO [tkzc]                 Book.java:2018 | End of Stub#1 memory: 30,293,712
+2025-05-31 17:42:52,171 INFO [tkzc]                 Book.java:2025 | Book processed.
+2025-05-31 17:42:52,304 INFO [tkzc]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-05-31 17:42:52,444 INFO [tkzc]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1]
+2025-05-31 17:42:52,478 INFO [tkzc]        ScoreExporter.java:164  | Score tkzc exported to data/output/tkzc.mxl
+2025-05-31 17:42:52,496 INFO [tkzc]                Score.java:181  | Closing {Score 1}

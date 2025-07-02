@@ -1,0 +1,113 @@
+2025-07-02 19:21:25,184 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/music_evaluator/data/uploads/0f7a81199ff5d19bd5d610d07e1fb518.png
+2025-07-02 19:21:25,364 INFO []                 Book.java:2531 | Stored /book.xml
+2025-07-02 19:21:25,364 INFO []                 Book.java:2491 | Book stored as data/output/0f7a81199ff5d19bd5d610d07e1fb518.omr
+2025-07-02 19:21:25,369 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-07-02 19:21:25,370 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | LOAD
+2025-07-02 19:21:25,453 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            SheetStub.java:1268 | Loaded image #1 1236x1532 from /Users/amber/Desktop/lxf/music_evaluator/data/uploads/0f7a81199ff5d19bd5d610d07e1fb518.png
+2025-07-02 19:21:25,455 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            ImageUtil.java:206  | Discarding alpha band ...
+2025-07-02 19:21:25,520 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            ImageUtil.java:124  | Converting max RGB to gray
+2025-07-02 19:21:25,611 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | BINARY
+2025-07-02 19:21:25,744 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | SCALE
+2025-07-02 19:21:25,759 INFO [0f7a81199ff5d19bd5d610d07e1fb518]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 13 interline
+2025-07-02 19:21:25,759 INFO [0f7a81199ff5d19bd5d610d07e1fb518]         ScaleBuilder.java:264  | Beam measured height:  6 -- 0.22 of [4..13] range at 137% of needed quorum
+2025-07-02 19:21:25,760 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            ScaleStep.java:65   | Scale{ interline(12,13,14) line(1,2,2) beam(6)}
+2025-07-02 19:21:25,760 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | GRID
+2025-07-02 19:21:26,274 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-07-02 19:21:26,301 INFO [0f7a81199ff5d19bd5d610d07e1fb518]    ClustersRetriever.java:328  | Retrieved raw line clusters: 10 of sizes [5] with interline(12,13,14)
+2025-07-02 19:21:26,387 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-07-02 19:21:26,545 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        SystemManager.java:134  | Indentation detected for system #1
+2025-07-02 19:21:26,547 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        SystemManager.java:779  | 1 part along 5 systems
+2025-07-02 19:21:26,547 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:545  | Created scores: [{Score 1}]
+2025-07-02 19:21:26,548 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | HEADERS
+2025-07-02 19:21:26,712 INFO [0f7a81199ff5d19bd5d610d07e1fb518]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-07-02 19:21:26,713 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Desktop/lxf/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-07-02 19:21:27,175 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | STEM_SEEDS
+2025-07-02 19:21:27,191 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        StemSeedsStep.java:86   | stem(2 max:3)
+2025-07-02 19:21:27,208 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | BEAMS
+2025-07-02 19:21:27,561 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | LEDGERS
+2025-07-02 19:21:27,645 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | HEADS
+2025-07-02 19:21:28,416 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.0] NOTEHEAD_BLACK[L:0.4,R:-0.8]}
+2025-07-02 19:21:28,416 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | STEMS
+2025-07-02 19:21:28,725 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | REDUCTION
+2025-07-02 19:21:28,793 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        ReductionStep.java:105  | Stems free length median value: 46 pixels, 3.5 interlines
+2025-07-02 19:21:28,795 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | CUE_BEAMS
+2025-07-02 19:21:28,796 INFO [0f7a81199ff5d19bd5d610d07e1fb518]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-07-02 19:21:28,796 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | TEXTS
+2025-07-02 19:21:28,836 WARN [0f7a81199ff5d19bd5d610d07e1fb518]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-07-02 19:21:28,837 INFO [0f7a81199ff5d19bd5d610d07e1fb518]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-07-02 19:21:28,840 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | MEASURES
+2025-07-02 19:21:28,845 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Page.java:307  | 10 raw measures: [2 in system#1, 2 in system#2, 2 in system#3, 2 in system#4, 2 in system#5]
+2025-07-02 19:21:28,845 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | CHORDS
+2025-07-02 19:21:28,851 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | CURVES
+2025-07-02 19:21:29,115 INFO [0f7a81199ff5d19bd5d610d07e1fb518]         SlursBuilder.java:240  | Slurs: 0
+2025-07-02 19:21:29,128 INFO [0f7a81199ff5d19bd5d610d07e1fb518]      SegmentsBuilder.java:155  | Segments: 144
+2025-07-02 19:21:29,131 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | SYMBOLS
+2025-07-02 19:21:29,369 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | LINKS
+2025-07-02 19:21:29,392 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | RHYTHMS
+2025-07-02 19:21:29,403 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#1} No timeOffset for RestChordInter#6052{(0.797/0.797) staff:1 slot#7 dur:1/8}
+2025-07-02 19:21:29,404 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#1} No timeOffset for HeadChordInter#5051{(0.938/0.938) staff:2 slot#7 dur:1/6}
+2025-07-02 19:21:29,404 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#1} No timeOffset for RestChordInter#6052{(0.797/0.797) staff:1 slot#7 dur:1/8}
+2025-07-02 19:21:29,404 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#1} No timeOffset for HeadChordInter#5051{(0.938/0.938) staff:2 slot#7 dur:1/6}
+2025-07-02 19:21:29,404 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#1} No timeOffset for RestChordInter#6053{(0.796/0.796) staff:1 slot#8 dur:1/8}
+2025-07-02 19:21:29,404 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#1} No timeOffset for HeadChordInter#5051{(0.938/0.938) staff:2 slot#7 dur:1/6}
+2025-07-02 19:21:29,404 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#2} No timeOffset for RestChordInter#6054{(0.782/0.782) staff:1 slot#7 dur:1/8}
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#2} No timeOffset for HeadChordInter#5059{(0.940/0.940) staff:2 slot#7 dur:1/4}
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#2} No timeOffset for RestChordInter#6054{(0.782/0.782) staff:1 slot#7 dur:1/8}
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#2} No timeOffset for HeadChordInter#5059{(0.940/0.940) staff:2 slot#7 dur:1/4}
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#2} No timeOffset for RestChordInter#6055{(0.777/0.777) staff:1 slot#8 dur:1/8}
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#2} No timeOffset for HeadChordInter#5059{(0.940/0.940) staff:2 slot#7 dur:1/4}
+2025-07-02 19:21:29,407 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2025-07-02 19:21:29,408 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2025-07-02 19:21:29,410 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#3} No timeOffset for HeadChordInter#5077{(0.957/0.957) staff:4 slot#6 dur:1/8}
+2025-07-02 19:21:29,410 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#3} No timeOffset for HeadChordInter#5077{(0.957/0.957) staff:4 slot#6 dur:1/8}
+2025-07-02 19:21:29,410 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#3} No timeOffset for HeadChordInter#5078{(0.941/0.941) staff:4 slot#7 dur:1/4}
+2025-07-02 19:21:29,410 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/8} too long
+2025-07-02 19:21:29,410 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#3} Voice{#2 excess:3/8} too long
+2025-07-02 19:21:29,410 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S2 MeasureStack#3 no correct rhythm
+2025-07-02 19:21:29,413 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#4} Voice{#8 excess:1/6} too long
+2025-07-02 19:21:29,413 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S2 MeasureStack#4 no correct rhythm
+2025-07-02 19:21:29,415 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#5} Voice{#7 excess:1/12} too long
+2025-07-02 19:21:29,415 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S3 MeasureStack#5 no correct rhythm
+2025-07-02 19:21:29,417 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#6} Voice{#7 excess:1/24} too long
+2025-07-02 19:21:29,418 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S3 MeasureStack#6 no correct rhythm
+2025-07-02 19:21:29,420 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/24} too long
+2025-07-02 19:21:29,420 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#5 excess:1/24} too long
+2025-07-02 19:21:29,420 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#7 excess:1/8} too long
+2025-07-02 19:21:29,420 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#2 excess:1/24} too long
+2025-07-02 19:21:29,420 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S4 MeasureStack#7 no correct rhythm
+2025-07-02 19:21:29,422 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#8} No timeOffset for HeadChordInter#5144{(0.943/0.943) slot#8 dur:1/12}
+2025-07-02 19:21:29,422 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#8} Voice{#6 excess:1/24} too long
+2025-07-02 19:21:29,422 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S4 MeasureStack#8 no correct rhythm
+2025-07-02 19:21:29,424 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#9} Voice{#6 excess:1/12} too long
+2025-07-02 19:21:29,424 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S5 MeasureStack#9 no correct rhythm
+2025-07-02 19:21:29,425 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        MeasureRhythm.java:1045 | Measure{#10} No timeOffset for HeadChordInter#5170{(0.935/0.935) staff:10 slot#7 dur:1/4}
+2025-07-02 19:21:29,425 INFO [0f7a81199ff5d19bd5d610d07e1fb518]   AbstractChordInter.java:627  | Measure{#10} No timeOffset for HeadChordInter#5170{(0.935/0.935) staff:10 slot#7 dur:1/4}
+2025-07-02 19:21:29,425 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#10} Voice{#1 excess:1/4} too long
+2025-07-02 19:21:29,425 INFO [0f7a81199ff5d19bd5d610d07e1fb518]          StackRhythm.java:224  | S5 MeasureStack#10 no correct rhythm
+2025-07-02 19:21:29,425 INFO [0f7a81199ff5d19bd5d610d07e1fb518]       StepMonitoring.java:98   | PAGE
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#3} Voice{#2 excess:3/8} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/8} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#4} Voice{#8 excess:1/6} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#5} Voice{#7 excess:1/12} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#6} Voice{#7 excess:1/24} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/24} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#2 excess:1/24} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#5 excess:1/24} too long
+2025-07-02 19:21:29,427 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#7} Voice{#7 excess:1/8} too long
+2025-07-02 19:21:29,428 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#8} Voice{#6 excess:1/24} too long
+2025-07-02 19:21:29,428 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#9} Voice{#6 excess:1/12} too long
+2025-07-02 19:21:29,428 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Voice.java:257  | Measure{#10} Voice{#1 excess:1/4} too long
+2025-07-02 19:21:29,428 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:2550 | Book{0f7a81199ff5d19bd5d610d07e1fb518} storing
+2025-07-02 19:21:29,450 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:2531 | Stored /book.xml
+2025-07-02 19:21:29,481 INFO [0f7a81199ff5d19bd5d610d07e1fb518]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-07-02 19:21:29,799 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-07-02 19:21:29,800 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:2491 | Book stored as data/output/0f7a81199ff5d19bd5d610d07e1fb518.omr
+2025-07-02 19:21:29,801 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            SheetStub.java:1644 | Disposed sheet
+2025-07-02 19:21:29,826 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:2018 | End of Stub#1 memory: 30,508,040
+2025-07-02 19:21:29,827 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                 Book.java:2025 | Book processed.
+2025-07-02 19:21:29,940 INFO [0f7a81199ff5d19bd5d610d07e1fb518]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-07-02 19:21:30,076 INFO [0f7a81199ff5d19bd5d610d07e1fb518]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1]
+2025-07-02 19:21:30,116 INFO [0f7a81199ff5d19bd5d610d07e1fb518]        ScoreExporter.java:164  | Score 0f7a81199ff5d19bd5d610d07e1fb518 exported to data/output/0f7a81199ff5d19bd5d610d07e1fb518.mxl
+2025-07-02 19:21:30,136 INFO [0f7a81199ff5d19bd5d610d07e1fb518]                Score.java:181  | Closing {Score 1}
