@@ -11,3 +11,4 @@ matplotlib
 scipy
 dtw-python
 fastdtw
+PyQt5

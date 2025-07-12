@@ -1,0 +1,58 @@
+2025-07-12 23:43:49,299 INFO [page_0_tkzc2]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/git/music_evaluator/data/uploads/page_0_tkzc2.png
+2025-07-12 23:43:49,374 INFO []                 Book.java:2531 | Stored /book.xml
+2025-07-12 23:43:49,375 INFO []                 Book.java:2491 | Book stored as data/output/page_0_tkzc2.omr
+2025-07-12 23:43:49,379 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-07-12 23:43:49,379 INFO [page_0_tkzc2]       StepMonitoring.java:98   | LOAD
+2025-07-12 23:43:49,430 INFO [page_0_tkzc2]            SheetStub.java:1268 | Loaded image #1 1600x2263 from /Users/amber/Desktop/lxf/git/music_evaluator/data/uploads/page_0_tkzc2.png
+2025-07-12 23:43:49,432 INFO [page_0_tkzc2]            ImageUtil.java:124  | Converting max RGB to gray
+2025-07-12 23:43:49,501 INFO [page_0_tkzc2]       StepMonitoring.java:98   | BINARY
+2025-07-12 23:43:49,640 INFO [page_0_tkzc2]       StepMonitoring.java:98   | SCALE
+2025-07-12 23:43:49,664 INFO [page_0_tkzc2]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 13 interline
+2025-07-12 23:43:49,665 INFO [page_0_tkzc2]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.44 of [4..13] range at 86% of needed quorum
+2025-07-12 23:43:49,666 INFO [page_0_tkzc2]            ScaleStep.java:65   | Scale{ interline(13,13,14) line(2,3,3) beam(8)}
+2025-07-12 23:43:49,666 INFO [page_0_tkzc2]       StepMonitoring.java:98   | GRID
+2025-07-12 23:43:49,865 INFO [page_0_tkzc2]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-07-12 23:43:49,881 INFO [page_0_tkzc2]    ClustersRetriever.java:328  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,13,14)
+2025-07-12 23:43:49,933 INFO [page_0_tkzc2]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-07-12 23:43:50,072 INFO [page_0_tkzc2]        SystemManager.java:134  | Indentation detected for system #1
+2025-07-12 23:43:50,072 INFO [page_0_tkzc2]        SystemManager.java:779  | 1 part along 6 systems
+2025-07-12 23:43:50,073 INFO [page_0_tkzc2]                 Book.java:545  | Created scores: [{Score 1}]
+2025-07-12 23:43:50,073 INFO [page_0_tkzc2]       StepMonitoring.java:98   | HEADERS
+2025-07-12 23:43:50,221 INFO [page_0_tkzc2]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-07-12 23:43:50,222 INFO [page_0_tkzc2]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Desktop/lxf/git/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-07-12 23:43:50,779 INFO [page_0_tkzc2]       StepMonitoring.java:98   | STEM_SEEDS
+2025-07-12 23:43:50,800 INFO [page_0_tkzc2]        StemSeedsStep.java:86   | stem(3 max:3)
+2025-07-12 23:43:50,817 INFO [page_0_tkzc2]       StepMonitoring.java:98   | BEAMS
+2025-07-12 23:43:51,482 INFO [page_0_tkzc2]       StepMonitoring.java:98   | LEDGERS
+2025-07-12 23:43:51,514 INFO [page_0_tkzc2]       StepMonitoring.java:98   | HEADS
+2025-07-12 23:43:52,694 INFO [page_0_tkzc2]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.5,R:-0.0] NOTEHEAD_BLACK[L:-0.4,R:-0.3]}
+2025-07-12 23:43:52,695 INFO [page_0_tkzc2]       StepMonitoring.java:98   | STEMS
+2025-07-12 23:43:52,863 INFO [page_0_tkzc2]       StepMonitoring.java:98   | REDUCTION
+2025-07-12 23:43:52,902 INFO [page_0_tkzc2]        ReductionStep.java:105  | Stems free length median value: 47 pixels, 3.6 interlines
+2025-07-12 23:43:52,904 INFO [page_0_tkzc2]       StepMonitoring.java:98   | CUE_BEAMS
+2025-07-12 23:43:52,904 INFO [page_0_tkzc2]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-07-12 23:43:52,904 INFO [page_0_tkzc2]       StepMonitoring.java:98   | TEXTS
+2025-07-12 23:43:52,941 WARN [page_0_tkzc2]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-07-12 23:43:52,941 INFO [page_0_tkzc2]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-07-12 23:43:52,944 INFO [page_0_tkzc2]       StepMonitoring.java:98   | MEASURES
+2025-07-12 23:43:52,949 INFO [page_0_tkzc2]                 Page.java:307  | 24 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 4 in system#4, 4 in system#5, 4 in system#6]
+2025-07-12 23:43:52,950 INFO [page_0_tkzc2]       StepMonitoring.java:98   | CHORDS
+2025-07-12 23:43:52,957 INFO [page_0_tkzc2]       StepMonitoring.java:98   | CURVES
+2025-07-12 23:43:53,220 INFO [page_0_tkzc2]         SlursBuilder.java:240  | Slurs: 1
+2025-07-12 23:43:53,222 INFO [page_0_tkzc2]      SegmentsBuilder.java:155  | Segments: 2
+2025-07-12 23:43:53,224 INFO [page_0_tkzc2]       StepMonitoring.java:98   | SYMBOLS
+2025-07-12 23:43:53,342 INFO [page_0_tkzc2]       StepMonitoring.java:98   | LINKS
+2025-07-12 23:43:53,360 INFO [page_0_tkzc2]       StepMonitoring.java:98   | RHYTHMS
+2025-07-12 23:43:53,395 INFO [page_0_tkzc2]       StepMonitoring.java:98   | PAGE
+2025-07-12 23:43:53,398 INFO [page_0_tkzc2]                 Book.java:2550 | Book{page_0_tkzc2} storing
+2025-07-12 23:43:53,424 INFO [page_0_tkzc2]                 Book.java:2531 | Stored /book.xml
+2025-07-12 23:43:53,479 INFO [page_0_tkzc2]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-07-12 23:43:53,801 INFO [page_0_tkzc2]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-07-12 23:43:53,802 INFO [page_0_tkzc2]                 Book.java:2491 | Book stored as data/output/page_0_tkzc2.omr
+2025-07-12 23:43:53,804 INFO [page_0_tkzc2]            SheetStub.java:1644 | Disposed sheet
+2025-07-12 23:43:53,836 INFO [page_0_tkzc2]                 Book.java:2018 | End of Stub#1 memory: 30,130,736
+2025-07-12 23:43:53,837 INFO [page_0_tkzc2]                 Book.java:2025 | Book processed.
+2025-07-12 23:43:53,970 INFO [page_0_tkzc2]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-07-12 23:43:54,101 INFO [page_0_tkzc2]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1]
+2025-07-12 23:43:54,133 INFO [page_0_tkzc2]        ScoreExporter.java:164  | Score page_0_tkzc2 exported to data/output/page_0_tkzc2.mxl
+2025-07-12 23:43:54,148 INFO [page_0_tkzc2]                Score.java:181  | Closing {Score 1}

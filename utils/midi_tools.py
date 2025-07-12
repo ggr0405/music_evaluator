@@ -58,6 +58,7 @@ def merge_musicxml_to_midi(xml_paths, output_midi_path, instrument_name=None):
     combined_score = stream.Score()
 
     for xml_path in xml_paths:
+        print(xml_path)
         try:
             score = converter.parse(xml_path)
 
