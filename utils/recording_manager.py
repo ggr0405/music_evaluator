@@ -191,7 +191,15 @@ def render_recording_upload_form(song_name: str):
     """渲染演奏录音上传表单"""
     st.subheader("➕ 添加新评分")
 
-    with st.form("upload_recording_form"):
+    # 初始化表单重置状态
+    if 'form_submit_success' not in st.session_state:
+        st.session_state.form_submit_success = False
+
+    # 使用时间戳作为表单key，在成功提交后更新key来重置表单
+    if 'upload_form_key' not in st.session_state:
+        st.session_state.upload_form_key = 0
+
+    with st.form(f"upload_recording_form_{st.session_state.upload_form_key}"):
         # 演奏者名称
         performer_name = st.text_input(
             "演奏者名称 *",
@@ -252,6 +260,9 @@ def render_recording_upload_form(song_name: str):
                     else:
                         st.warning(f"✅ 录音 '{performer_name}' 上传成功，但评分失败（可能是缺少乐谱文件）")
 
+                # 标记提交成功，并重置表单
+                st.session_state.form_submit_success = True
+                st.session_state.upload_form_key += 1  # 更新表单key以重置表单组件
                 st.rerun()
 
             except Exception as e:
