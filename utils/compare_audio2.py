@@ -6,7 +6,7 @@ from scipy.spatial.distance import euclidean as norm
 from fastdtw import fastdtw
 import os
 
-def compare_audio2(ref_path, user_path):
+def compare_audio2(ref_path, user_path, unique_id=None):
     # 固定采样率加载
     sr_target = 16000
     y_ref, sr_ref = librosa.load(ref_path, sr=sr_target)
@@ -94,7 +94,7 @@ def compare_audio2(ref_path, user_path):
         rhythm_segment_scores.append(rhythm_seg_score)
 
     # 绘图
-    svg_path = plot_segment_scores_bar(pitch_segment_scores_f0, rhythm_segment_scores)
+    svg_path = plot_segment_scores_bar(pitch_segment_scores_f0, rhythm_segment_scores, unique_id)
 
     return {
         "score": overall_score,
@@ -109,13 +109,22 @@ def compare_audio2(ref_path, user_path):
     }
 
 
-def plot_segment_scores_bar(pitch_scores, rhythm_scores):
+def plot_segment_scores_bar(pitch_scores, rhythm_scores, unique_id=None):
     import matplotlib.pyplot as plt
     import numpy as np
     import os
+    from datetime import datetime
 
-    os.makedirs("data/out", exist_ok=True)
-    svg_path = "data/out/segment_scores.svg"
+    # 创建持久化图表目录
+    charts_dir = "data/charts"
+    os.makedirs(charts_dir, exist_ok=True)
+
+    # 生成唯一文件名，避免覆盖
+    if unique_id:
+        svg_path = f"{charts_dir}/segment_scores_{unique_id}.svg"
+    else:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]  # 包含毫秒
+        svg_path = f"{charts_dir}/segment_scores_{timestamp}.svg"
 
     segments = np.arange(len(pitch_scores))
 
