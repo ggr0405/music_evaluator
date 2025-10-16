@@ -4,9 +4,94 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/a.py" afterDir="false" />
+    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_10_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_10_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_11_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_11_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_12_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_12_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_13_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_13_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_14_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_14_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_15_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_15_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_1_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_1_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_2_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_2_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_3_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_3_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_4_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_4_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_5_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_5_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_6_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_6_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_7_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_7_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_8_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_8_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_9_20251016_133816.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/charts/segment_scores_recording_9_20251016_134727.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/孙七_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/孙七_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/张三_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/张三_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/李四_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/李四_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/王五_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/王五_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/赵六_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/小星星/赵六_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/孙七_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/孙七_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/张三_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/张三_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/李四_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/李四_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/王五_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/王五_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/赵六_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/欢乐颂/赵六_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/孙七_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/孙七_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/张三_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/张三_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/李四_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/李四_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/王五_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/王五_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/赵六_20251016_133816_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/recordings/茉莉花/赵六_20251016_134727_演奏.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/小星星/Clarinet_20251016_133816_小星星.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/小星星/Clarinet_20251016_134727_小星星.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/小星星/Violin_20251016_133816_小星星.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/小星星/Violin_20251016_134727_小星星.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/小星星/合声_20251016_133816_小星星.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/小星星/合声_20251016_134727_小星星.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/欢乐颂/Clarinet_20251016_133816_欢乐颂.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/欢乐颂/Clarinet_20251016_134727_欢乐颂.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/欢乐颂/Violin_20251016_133816_欢乐颂.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/欢乐颂/Violin_20251016_134727_欢乐颂.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/欢乐颂/合声_20251016_133816_欢乐颂.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/欢乐颂/合声_20251016_134727_欢乐颂.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/茉莉花/Clarinet_20251016_133816_茉莉花.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/茉莉花/Clarinet_20251016_134727_茉莉花.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/茉莉花/Violin_20251016_133816_茉莉花.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/茉莉花/Violin_20251016_134727_茉莉花.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/茉莉花/合声_20251016_133816_茉莉花.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/sheet_music/茉莉花/合声_20251016_134727_茉莉花.mxl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_test_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/midi_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/midi_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/recording_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/recording_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/sheet_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/sheet_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +224,43 @@
       <option name="presentableId" value="Default" />
       <updated>1751458254079</updated>
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <option name="closed" value="true" />
+      <created>1760581100855</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760581100855</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1">
+      <option name="closed" value="true" />
+      <created>1760592663473</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760592663476</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1">
+      <option name="closed" value="true" />
+      <created>1760592896162</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760592896164</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1">
+      <option name="closed" value="true" />
+      <created>1760593734045</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760593734045</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>

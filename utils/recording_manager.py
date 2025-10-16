@@ -12,14 +12,34 @@ from database.crud import (
 )
 from utils.midi_tools import merge_musicxml_to_midi, midi_to_mp3
 from utils.compare_audio2 import compare_audio2
+from utils.omr import run_audiveris
 
 # 永久存储目录
 RECORDING_DIR = "data/recordings"
+REFERENCE_AUDIO_DIR = "data/reference_audio"
 
 def ensure_recording_dir():
     """确保录音存储目录存在"""
     os.makedirs(RECORDING_DIR, exist_ok=True)
     return RECORDING_DIR
+
+def ensure_reference_audio_dir():
+    """确保参考音频存储目录存在"""
+    os.makedirs(REFERENCE_AUDIO_DIR, exist_ok=True)
+    return REFERENCE_AUDIO_DIR
+
+def generate_reference_audio_path(song_name: str, instrument: str, recording_id: int) -> str:
+    """生成参考音频文件的存储路径"""
+    ensure_reference_audio_dir()
+    # 创建曲目专用目录
+    song_dir = os.path.join(REFERENCE_AUDIO_DIR, song_name.replace("/", "_").replace("\\", "_"))
+    os.makedirs(song_dir, exist_ok=True)
+
+    # 生成文件名：reference_{instrument}_{recording_id}_{timestamp}.mp3
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"reference_{instrument}_{recording_id}_{timestamp}.mp3"
+
+    return os.path.join(song_dir, filename)
 
 def generate_recording_file_path(song_name: str, performer_name: str, original_filename: str) -> str:
     """生成录音文件的存储路径，避免同名文件覆盖"""
@@ -48,14 +68,18 @@ def save_recording_file(uploaded_file, file_path: str) -> int:
 def perform_scoring(db, song_name: str, instrument: str, user_audio_path: str, recording_id: int):
     """
     执行评分逻辑：
-    1. 如果有对应乐器的乐谱，使用该乐器乐谱合成音频
-    2. 如果没有对应乐器的乐谱，使用所有乐谱合成合声音频
-    3. 与用户上传的音频进行对比评分
-    4. 保存评分结果到数据库
+    1. 获取曲目的乐谱文件（图片或PDF）
+    2. 如果是图片格式，先进行OMR识别生成MXL文件
+    3. 根据乐器类型合成标准音频：
+       - 如果有对应乐器的乐谱，使用该乐器乐谱合成音频
+       - 如果没有对应乐器的乐谱，使用所有乐谱合成合声音频
+    4. 与用户上传的音频进行对比评分
+    5. 保存评分结果到数据库
     """
     try:
         # 确保输出目录存在
         os.makedirs("tmp/output", exist_ok=True)
+        os.makedirs("data/output", exist_ok=True)
 
         # 获取曲目的所有乐谱
         solos = get_solos_by_song(db, song_name)
@@ -71,31 +95,69 @@ def perform_scoring(db, song_name: str, instrument: str, user_audio_path: str, r
         midi_path = f"tmp/output/ref_{timestamp}.mid"
         mp3_path = f"tmp/output/ref_{timestamp}.mp3"
 
-        # 获取所有可用的乐谱文件路径
-        sheet_paths = [solo.file_path for solo in solos if os.path.exists(solo.file_path)]
-        if not sheet_paths:
-            print("❌ 没有可用的乐谱文件")
+        # 处理乐谱文件，区分图片和MXL文件
+        mxl_paths = []
+
+        # 选择要处理的乐谱文件
+        target_solos = instrument_solos if instrument_solos else solos
+
+        for solo in target_solos:
+            if not os.path.exists(solo.file_path):
+                continue
+
+            # 根据文件扩展名判断类型
+            file_ext = solo.file_path.lower().split('.')[-1]
+
+            if file_ext in ['mxl', 'musicxml']:
+                # 直接使用MXL文件
+                mxl_paths.append(solo.file_path)
+                print(f"✅ 直接使用MXL文件: {solo.file_path}")
+
+            elif file_ext in ['png', 'jpg', 'jpeg', 'pdf']:
+                # 图片/PDF文件需要OMR识别
+                print(f"🔍 正在识别乐谱图片: {solo.file_path}")
+                try:
+                    # 使用OMR识别生成MXL文件
+                    recognized_mxls = run_audiveris(solo.file_path, "data/output/")
+                    if recognized_mxls and len(recognized_mxls) > 0:
+                        for mxl_file in recognized_mxls:
+                            if os.path.exists(mxl_file):
+                                mxl_paths.append(mxl_file)
+                                print(f"✅ OMR识别成功，生成MXL: {mxl_file}")
+                    else:
+                        print(f"⚠️ OMR识别失败: {solo.file_path}")
+                except Exception as omr_error:
+                    print(f"⚠️ OMR识别异常: {solo.file_path}, 错误: {omr_error}")
+                    continue
+
+        if not mxl_paths:
+            print("❌ 没有可用的MXL文件（原有或识别生成）")
             return None
+
+        print(f"✅ 共获得 {len(mxl_paths)} 个MXL文件，开始合成音频")
+
+        # 根据乐器类型合成MIDI
+        inst = None if instrument == "合声" else instrument
 
         if instrument_solos:
             print(f"✅ 找到 {len(instrument_solos)} 个 {instrument} 乐谱，使用指定乐器合成")
-            # 使用对应乐器的乐谱，指定乐器类型合成
-            instrument_paths = [solo.file_path for solo in instrument_solos if os.path.exists(solo.file_path)]
-            # 根据原始逻辑：如果是"合声"则传None，否则传具体乐器名
-            inst = None if instrument == "合声" else instrument
-            merge_musicxml_to_midi(instrument_paths, midi_path, inst)
         else:
             print(f"⚠️ 没有找到 {instrument} 乐谱，使用所有乐谱合成合声")
-            # 使用所有乐谱合成合声（instrument为None表示合声）
-            merge_musicxml_to_midi(sheet_paths, midi_path, None)
+
+        merge_musicxml_to_midi(mxl_paths, midi_path, inst)
 
         # 将MIDI转换为MP3
         midi_to_mp3(midi_path, mp3_path, "data/FluidR3_GM.sf2")
 
+        # 生成持久化参考音频路径并复制文件
+        reference_audio_path = generate_reference_audio_path(song_name, instrument, recording_id)
+        shutil.copy2(mp3_path, reference_audio_path)
+        print(f"✅ 参考音频已保存: {reference_audio_path}")
+
         # 执行音频对比评分，使用 recording_id 作为唯一标识
         result = compare_audio2(mp3_path, user_audio_path, f"recording_{recording_id}_{timestamp}")
 
-        # 保存评分结果到数据库
+        # 保存评分结果到数据库，包含参考音频路径
         create_score(
             db=db,
             recording_id=recording_id,
@@ -105,7 +167,8 @@ def perform_scoring(db, song_name: str, instrument: str, user_audio_path: str, r
             pitch_error=result['pitch_error'],
             rhythm_error=result['rhythm_error'],
             suggestions="; ".join(result['suggestions']),
-            chart_path=result.get('chart', '')
+            chart_path=result.get('chart', ''),
+            reference_audio_path=reference_audio_path
         )
 
         # 清理临时文件
@@ -231,7 +294,8 @@ def render_recording_item(recording):
                         'pitch_error': latest_score.pitch_error,
                         'rhythm_error': latest_score.rhythm_error,
                         'suggestions': latest_score.suggestions,
-                        'chart_path': latest_score.chart_path
+                        'chart_path': latest_score.chart_path,
+                        'reference_audio_path': latest_score.reference_audio_path
                     }
         except Exception as e:
             st.error(f"获取评分结果失败：{e}")
@@ -284,12 +348,17 @@ def render_recording_item(recording):
 
             # 可展开查看完整评分分析
             with st.expander("📊 查看详细分析"):
+
+                # 评分分析图表
                 if score_data['chart_path'] and os.path.exists(score_data['chart_path']):
+                    st.markdown("### 📈 评分分析图表")
                     st.image(score_data['chart_path'], caption="时间段评分分析")
+
+                st.divider()
 
                 # 评分说明
                 st.markdown("""
-                **评分说明：**
+                ### 📋 评分说明
                 - **综合评分**（0~100）：综合考虑音准和节奏表现，**音准占比 80%，节奏占比 20%**
                 - **音准误差**（Hz）：基频的平均差异，越低越好，表示音高更准确
                 - **音准评分**（0~100）：根据基频误差计算的分数，越高表示音准越准确
@@ -299,19 +368,54 @@ def render_recording_item(recording):
         else:
             st.warning("⚠️ 暂无评分结果")
 
-        # 文件下载
-        if os.path.exists(recording.audio_path):
+        # 简化的音频播放和下载（基础功能）
+        if score_data and score_data.get('reference_audio_path') and os.path.exists(score_data['reference_audio_path']):
+            audio_summary_col1, audio_summary_col2 = st.columns(2)
+            with audio_summary_col1:
+                st.caption("🎼 标准音频预览")
+                with open(score_data['reference_audio_path'], "rb") as f:
+                    st.audio(f.read(), format='audio/mp3')
+                # 标准音频下载按钮
+                with open(score_data['reference_audio_path'], "rb") as f:
+                    st.download_button(
+                        label="📥 下载标准音频",
+                        data=f.read(),
+                        file_name=f"标准音频_{recording.performer_name}_{recording.instrument}.mp3",
+                        mime="audio/mp3",
+                        key=f"download_ref_summary_{recording.id}",
+                        use_container_width=True
+                    )
+            with audio_summary_col2:
+                st.caption("🎤 演奏录音预览")
+                if os.path.exists(recording.audio_path):
+                    with open(recording.audio_path, "rb") as f:
+                        st.audio(f.read(), format='audio/mp3')
+                    # 演奏录音下载按钮
+                    with open(recording.audio_path, "rb") as f:
+                        st.download_button(
+                            label="📥 下载演奏录音",
+                            data=f.read(),
+                            file_name=recording.original_filename or f"{recording.performer_name}_演奏.mp3",
+                            mime="audio/mp3",
+                            key=f"download_user_summary_{recording.id}",
+                            use_container_width=True
+                        )
+                else:
+                    st.error("演奏录音文件不存在")
+        elif os.path.exists(recording.audio_path):
+            st.caption("🎤 演奏录音预览")
+            with open(recording.audio_path, "rb") as f:
+                st.audio(f.read(), format='audio/mp3')
+            # 仅演奏录音下载按钮
             with open(recording.audio_path, "rb") as f:
                 st.download_button(
-                    label="📥 下载",
+                    label="📥 下载演奏录音",
                     data=f.read(),
-                    file_name=recording.original_filename or f"{recording.performer_name}.mp3",
-                    mime="audio/mpeg",
-                    key=f"download_recording_{recording.id}",
+                    file_name=recording.original_filename or f"{recording.performer_name}_演奏.mp3",
+                    mime="audio/mp3",
+                    key=f"download_user_only_{recording.id}",
                     use_container_width=True
                 )
-        else:
-            st.error("文件不存在")
 
         st.divider()
 

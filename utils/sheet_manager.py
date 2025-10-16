@@ -138,8 +138,8 @@ def render_add_sheet_form(song_name: str):
         # 文件上传
         uploaded_file = st.file_uploader(
             "选择乐谱文件",
-            type=["pdf", "png", "jpg", "jpeg", "musicxml", "mxl", "mid", "midi"],
-            help="支持 PDF、图片、MusicXML、MIDI 格式"
+            type=["pdf", "png", "jpg", "jpeg"],
+            help="支持 PDF 和图片格式（PNG、JPG、JPEG）"
         )
 
         submit = st.form_submit_button("💾 保存乐谱", use_container_width=True)

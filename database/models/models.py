@@ -129,6 +129,7 @@ class PerformanceScore(Base):
     suggestions = Column(JSON)  # 存储建议列表
     segment_scores = Column(JSON)  # 存储分段评分数据
     chart_path = Column(String(500))
+    reference_audio_path = Column(String(500))  # 参考音频文件路径
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # 关系

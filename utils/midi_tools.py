@@ -47,6 +47,8 @@ def musicxml_to_midi2(xml_path, midi_path, instrument_name=None):
 
 
 def merge_musicxml_to_midi(xml_paths, output_midi_path, instrument_name=None):
+    print(f"xml_paths: {xml_paths}")
+    print(f"output_midi_path: {output_midi_path}")
     """
     将多个 MusicXML 文件合并为一个 MIDI 文件。
 

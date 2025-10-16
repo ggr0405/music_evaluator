@@ -105,6 +105,7 @@ def main():
     os.makedirs("data/sheet_music", exist_ok=True)
     os.makedirs("data/recordings", exist_ok=True)
     os.makedirs("data/charts", exist_ok=True)
+    os.makedirs("data/reference_audio", exist_ok=True)
 
     # 定义测试曲目
     songs_data = [
@@ -264,6 +265,84 @@ def main():
                 with open(chart_path, 'w', encoding='utf-8') as f:
                     f.write(svg_content)
 
+                # 生成真正的参考音频
+                try:
+                    # 导入音频生成工具
+                    from utils.midi_tools import merge_musicxml_to_midi, midi_to_mp3
+
+                    # 获取该曲目的所有乐谱
+                    from database.crud import get_solos_by_song
+                    solos = get_solos_by_song(db, song.name)
+
+                    if solos:
+                        # 创建临时目录
+                        os.makedirs("tmp/test_generation", exist_ok=True)
+
+                        # 生成临时 MIDI 和 MP3 路径
+                        temp_midi = f"tmp/test_generation/temp_{recording.id}_{timestamp}.mid"
+                        temp_mp3 = f"tmp/test_generation/temp_{recording.id}_{timestamp}.mp3"
+
+                        # 获取乐谱文件路径
+                        instrument_solos = [solo for solo in solos if solo.instrument == instrument]
+
+                        if instrument_solos:
+                            # 使用指定乐器的乐谱
+                            sheet_paths = [solo.file_path for solo in instrument_solos if os.path.exists(solo.file_path)]
+                            inst = None if instrument == "合声" else instrument
+                        else:
+                            # 使用所有乐谱
+                            sheet_paths = [solo.file_path for solo in solos if os.path.exists(solo.file_path)]
+                            inst = None
+
+                        if sheet_paths:
+                            # 合成 MIDI
+                            merge_musicxml_to_midi(sheet_paths, temp_midi, inst)
+
+                            # 转换为 MP3
+                            midi_to_mp3(temp_midi, temp_mp3, "data/FluidR3_GM.sf2")
+
+                            # 创建最终参考音频路径
+                            ref_audio_filename = f"reference_{instrument}_{recording.id}_{timestamp}.mp3"
+                            ref_audio_path = os.path.join("data/reference_audio", song.name.replace("/", "_").replace("\\", "_"))
+                            os.makedirs(ref_audio_path, exist_ok=True)
+                            ref_audio_full_path = os.path.join(ref_audio_path, ref_audio_filename)
+
+                            # 复制到最终位置
+                            import shutil
+                            shutil.copy2(temp_mp3, ref_audio_full_path)
+
+                            # 清理临时文件
+                            try:
+                                if os.path.exists(temp_midi):
+                                    os.remove(temp_midi)
+                                if os.path.exists(temp_mp3):
+                                    os.remove(temp_mp3)
+                            except:
+                                pass
+                        else:
+                            # 如果没有乐谱文件，创建占位文件
+                            ref_audio_filename = f"reference_{instrument}_{recording.id}_{timestamp}.mp3"
+                            ref_audio_path = os.path.join("data/reference_audio", song.name.replace("/", "_").replace("\\", "_"))
+                            os.makedirs(ref_audio_path, exist_ok=True)
+                            ref_audio_full_path = os.path.join(ref_audio_path, ref_audio_filename)
+                            create_simple_midi_like_file(ref_audio_full_path, f"参考音频_{instrument}_{song.name}")
+                    else:
+                        # 如果没有乐谱，创建占位文件
+                        ref_audio_filename = f"reference_{instrument}_{recording.id}_{timestamp}.mp3"
+                        ref_audio_path = os.path.join("data/reference_audio", song.name.replace("/", "_").replace("\\", "_"))
+                        os.makedirs(ref_audio_path, exist_ok=True)
+                        ref_audio_full_path = os.path.join(ref_audio_path, ref_audio_filename)
+                        create_simple_midi_like_file(ref_audio_full_path, f"参考音频_{instrument}_{song.name}")
+
+                except Exception as e:
+                    print(f"⚠️ 生成参考音频失败: {e}")
+                    # 创建占位文件
+                    ref_audio_filename = f"reference_{instrument}_{recording.id}_{timestamp}.mp3"
+                    ref_audio_path = os.path.join("data/reference_audio", song.name.replace("/", "_").replace("\\", "_"))
+                    os.makedirs(ref_audio_path, exist_ok=True)
+                    ref_audio_full_path = os.path.join(ref_audio_path, ref_audio_filename)
+                    create_simple_midi_like_file(ref_audio_full_path, f"参考音频_{instrument}_{song.name}")
+
                 # 保存评分到数据库
                 score = create_score(
                     db=db,
@@ -274,7 +353,8 @@ def main():
                     pitch_error=pitch_error,
                     rhythm_error=rhythm_error,
                     suggestions="; ".join(suggestions),
-                    chart_path=chart_path
+                    chart_path=chart_path,
+                    reference_audio_path=ref_audio_full_path
                 )
 
                 print(f"  ✅ 创建录音和评分: {performer} (评分: {overall_score}/100)")

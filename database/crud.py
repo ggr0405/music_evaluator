@@ -255,7 +255,7 @@ def update_recording(db: Session, recording_id: int, performer_name: str = None)
 # PerformanceScore CRUD
 def create_score(db: Session, recording_id: int, overall_score: int,
                 pitch_score: int, rhythm_score: int, pitch_error: float, rhythm_error: float,
-                suggestions: str, chart_path: str = None,
+                suggestions: str, chart_path: str = None, reference_audio_path: str = None,
                 project_id: int = None, user_id: int = None) -> PerformanceScore:
     """创建演奏评分记录"""
     db_score = PerformanceScore(
@@ -268,7 +268,8 @@ def create_score(db: Session, recording_id: int, overall_score: int,
         pitch_error=pitch_error,
         rhythm_error=rhythm_error,
         suggestions=suggestions,
-        chart_path=chart_path
+        chart_path=chart_path,
+        reference_audio_path=reference_audio_path
     )
     db.add(db_score)
     db.commit()
