@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1">
+    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1.0">
+      <change afterPath="$PROJECT_DIR$/data/charts/segment_scores_recording_1_20251016_155408.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/合声_20251016_155350_tkzc2-20251016T1554.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/合声_20251016_155350_tkzc2.mxl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/合声_20251016_155350_tkzc2.omr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/recordings/天空之城/张三同学_20251016_155408_t2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/reference_audio/天空之城/reference_合声_1_20251016_155417.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sheet_music/天空之城/合声_20251016_155350_tkzc2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_test_data.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,11 +202,29 @@
       <option name="project" value="LOCAL" />
       <updated>1760599474220</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="empty">
+      <option name="closed" value="true" />
+      <created>1760601173118</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760601173118</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1.0">
+      <option name="closed" value="true" />
+      <created>1760601306373</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760601306375</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="empty" />
+    <MESSAGE value="1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0" />
   </component>
 </project>
