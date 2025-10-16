@@ -5,106 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/0f7a81199ff5d19bd5d610d07e1fb518-20250702T1918.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/0f7a81199ff5d19bd5d610d07e1fb518-20250702T1921.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/0f7a81199ff5d19bd5d610d07e1fb518.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/0f7a81199ff5d19bd5d610d07e1fb518.omr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/1ac21d242f4e9fcfadb095373011f4d5-20250629T1655.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/1ac21d242f4e9fcfadb095373011f4d5-20250629T1656.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/1ac21d242f4e9fcfadb095373011f4d5.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/1ac21d242f4e9fcfadb095373011f4d5.omr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4-20250702T1906.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4-20250702T1908.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4-20250702T1912.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4-20250702T1923.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4-20250702T1927.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4-20250702T1940.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4.mvt1.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4.mvt2.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4.mvt3.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4.mvt4.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/f7723a034163d690735f88af403625e4.omr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/ref.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/ref.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250519T2222.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250519T2223.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250519T2224.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250519T2226.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250519T2227.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250527T1645.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250527T1646.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250527T1647.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250527T1652.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250527T1653.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1403.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1404.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1719.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1720.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1722.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1723.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1741.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1742.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1914.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T1915.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T2021.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T2025.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T2026.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T2031.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T2032.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250531T2040.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250601T1657.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250601T1658.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2045.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2046.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2050.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2051.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2055.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2056.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2059.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2100.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250603T2114.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc-20250702T1907.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc.omr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250531T1917.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250531T1918.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250531T1921.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250531T1922.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250531T2041.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250531T2042.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1642.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1646.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1647.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1659.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1701.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1702.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1703.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1704.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1705.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1706.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2-20250601T1707.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2.mxl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output/tkzc2.omr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/0f7a81199ff5d19bd5d610d07e1fb518.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/1ac21d242f4e9fcfadb095373011f4d5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/f7723a034163d690735f88af403625e4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/ref.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/t1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/t2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/tkzc.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/tkzc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/uploads/tkzc2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/midi_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/midi_tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,6 +34,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.a.executor&quot;: &quot;Run&quot;,
     &quot;Python.async_p2v_realtime_v2.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -133,7 +48,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.2">
+  <component name="RunManager" selected="Python.a">
     <configuration name="2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="music_evaluator" />
       <option name="ENV_FILES" value="" />
@@ -148,6 +63,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="a" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="music_evaluator" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,6 +117,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.a" />
         <item itemvalue="Python.2" />
         <item itemvalue="Python.async_p2v_realtime_v2" />
       </list>
