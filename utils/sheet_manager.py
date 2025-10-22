@@ -9,6 +9,7 @@ from database.utils import get_db_session
 from database.crud import (
     create_solo, get_solos_by_song, delete_solo, update_solo, get_solo_by_id
 )
+from utils.omr import run_audiveris
 
 # 永久存储目录
 SHEET_MUSIC_DIR = "data/sheet_music"
@@ -61,6 +62,16 @@ def render_existing_sheets(song_name: str):
             if not solos:
                 st.info("该曲目暂无乐谱，请添加乐谱文件")
                 return
+
+            # 合成音乐按钮
+            if len(solos) > 0:
+                col1, col2 = st.columns([1, 3])
+                with col1:
+                    if st.button("🎵 合成音乐", key=f"synthesize_{song_name}", use_container_width=True, type="primary"):
+                        synthesize_song_audio(song_name, solos)
+                with col2:
+                    st.empty()
+                st.divider()
 
             st.subheader(f"已有乐谱 ({len(solos)} 个)")
 
@@ -252,3 +263,95 @@ def get_solo_count(song_name: str) -> int:
             return len(solos)
     except:
         return 0
+
+def synthesize_song_audio(song_name: str, solos):
+    """合成曲目的所有乐谱为MP3文件"""
+    from utils.midi_tools import synthesize_all_sheets_to_mp3
+    from database.crud import update_song
+
+    try:
+        # 显示进度
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+
+        # 收集所有乐谱文件路径
+        xml_paths = []
+
+        for solo in solos:
+            if not os.path.exists(solo.file_path):
+                continue
+
+            # 根据文件扩展名判断类型
+            file_ext = solo.file_path.lower().split('.')[-1]
+
+            if file_ext in ['mxl', 'musicxml']:
+                # 直接使用MXL文件
+                xml_paths.append(solo.file_path)
+                print(f"✅ 直接使用MXL文件: {solo.file_path}")
+
+            elif file_ext in ['png', 'jpg', 'jpeg', 'pdf','PNG', 'JPG', 'JPEG', 'PDF']:
+                # 图片/PDF文件需要OMR识别
+                print(f"🔍 正在识别乐谱图片: {solo.file_path}")
+                try:
+                    # 使用OMR识别生成MXL文件
+                    recognized_mxls = run_audiveris(solo.file_path, "data/output/")
+                    if recognized_mxls and len(recognized_mxls) > 0:
+                        for mxl_file in recognized_mxls:
+                            if os.path.exists(mxl_file):
+                                xml_paths.append(mxl_file)
+                                print(f"✅ OMR识别成功，生成MXL: {mxl_file}")
+                    else:
+                        print(f"⚠️ OMR识别失败: {solo.file_path}")
+                except Exception as omr_error:
+                    print(f"⚠️ OMR识别异常: {solo.file_path}, 错误: {omr_error}")
+                    continue
+
+        if not xml_paths:
+            st.error("没有找到有效的乐谱文件")
+            return
+
+        status_text.text("正在准备合成...")
+        progress_bar.progress(20)
+
+        # 生成输出文件路径
+        audio_dir = "data/synthesized_audio"
+        os.makedirs(audio_dir, exist_ok=True)
+
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_mp3_path = os.path.join(audio_dir, f"{song_name.replace('/', '_')}_{timestamp}.mp3")
+
+        status_text.text("正在合成音频...")
+        progress_bar.progress(50)
+
+        # 调用合成功能
+        success = synthesize_all_sheets_to_mp3(xml_paths, output_mp3_path)
+
+        if success and os.path.exists(output_mp3_path):
+            progress_bar.progress(80)
+            status_text.text("正在保存到数据库...")
+
+            # 更新数据库中的音频路径
+            with get_db_session() as db:
+                update_song(db, song_name, synthesized_audio_path=output_mp3_path)
+
+            progress_bar.progress(100)
+            status_text.text("合成完成！")
+
+            # 显示成功消息和播放控件
+            st.success(f"✅ 音频合成完成！文件保存至：{output_mp3_path}")
+
+            # 添加音频播放控件
+            with open(output_mp3_path, "rb") as audio_file:
+                st.audio(audio_file.read(), format="audio/mp3")
+
+        else:
+            st.error("音频合成失败，请检查乐谱文件格式")
+
+    except Exception as e:
+        st.error(f"合成过程中出错：{e}")
+    finally:
+        # 清理进度显示
+        if 'progress_bar' in locals():
+            progress_bar.empty()
+        if 'status_text' in locals():
+            status_text.empty()

@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-from utils.song_manager import render_song_sidebar_content, get_selected_song
+from utils.song_manager import render_song_sidebar_content, get_selected_song, render_audio_player
 from utils.sheet_manager import render_sheet_music_management
 from database.utils import get_db_session
 from database.init_db import init_db
@@ -153,8 +153,12 @@ with main_container:
         if selected_song:
             st.info(f"📋 当前选中曲目：{selected_song}")
 
+        # 检查是否显示音频播放器
+        if st.session_state.get('show_audio_player'):
+            render_audio_player()
+
         # 检查是否显示乐谱管理界面
-        if st.session_state.get('show_sheet_management'):
+        elif st.session_state.get('show_sheet_management'):
             render_sheet_music_management(st.session_state.show_sheet_management)
         elif selected_song:
             # 当选中曲目时，显示评分管理界面

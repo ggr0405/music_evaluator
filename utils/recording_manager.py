@@ -113,7 +113,7 @@ def perform_scoring(db, song_name: str, instrument: str, user_audio_path: str, r
                 mxl_paths.append(solo.file_path)
                 print(f"✅ 直接使用MXL文件: {solo.file_path}")
 
-            elif file_ext in ['png', 'jpg', 'jpeg', 'pdf']:
+            elif file_ext in ['png', 'jpg', 'jpeg', 'pdf','PNG', 'JPG', 'JPEG', 'PDF']:
                 # 图片/PDF文件需要OMR识别
                 print(f"🔍 正在识别乐谱图片: {solo.file_path}")
                 try:
@@ -207,12 +207,8 @@ def render_recording_upload_form(song_name: str):
             help="必填字段"
         )
 
-        # 乐器选择
-        instrument = st.selectbox(
-            "乐器类型 *",
-            ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"],
-            help="选择演奏乐器类型，必填字段"
-        )
+        # 乐器类型默认为合声，不显示选择框
+        instrument = "合声"
 
         # 文件上传
         uploaded_file = st.file_uploader(
@@ -317,7 +313,6 @@ def render_recording_item(recording):
 
         with col1:
             st.markdown(f"**🎤 {recording.performer_name}**")
-            st.caption(f"乐器：{recording.instrument}")
             if recording.original_filename:
                 st.caption(f"文件：{recording.original_filename}")
 

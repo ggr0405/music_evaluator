@@ -2,6 +2,7 @@
 曲目管理工具模块
 """
 import streamlit as st
+import os
 from database.utils import get_db_session
 from database.crud import (
     create_song, get_all_songs, search_songs_by_name,
@@ -133,7 +134,7 @@ def render_song_item(song):
                 st.rerun()
 
         # 第二行：操作按钮
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             # 乐谱按钮，显示乐谱数量
             solo_count = get_solo_count(song.name)
@@ -143,10 +144,19 @@ def render_song_item(song):
                 st.session_state.show_sheet_management = song.name
 
         with col2:
+            # 播放按钮
+            if song.synthesized_audio_path and os.path.exists(song.synthesized_audio_path):
+                if st.button("▶️ 播放", key=f"play_{song.name}", help="播放合成音频", use_container_width=True):
+                    st.session_state.show_audio_player = song.name
+            else:
+                st.button("▶️ 播放", key=f"play_disabled_{song.name}", help="需要先合成音频",
+                         use_container_width=True, disabled=True)
+
+        with col3:
             if st.button("✏️ 编辑", key=f"edit_{song.name}", help="编辑曲目", use_container_width=True):
                 st.session_state.edit_song = song.name
 
-        with col3:
+        with col4:
             if st.button("🗑️ 删除", key=f"delete_{song.name}", help="删除曲目", use_container_width=True):
                 st.session_state.delete_song = song.name
 
@@ -244,3 +254,34 @@ def render_delete_confirmation(song):
 def get_selected_song():
     """获取当前选中的曲目"""
     return st.session_state.get('selected_song', None)
+
+def render_audio_player():
+    """渲染音频播放器"""
+    if st.session_state.get('show_audio_player'):
+        song_name = st.session_state.show_audio_player
+
+        try:
+            with get_db_session() as db:
+                song = get_song_by_name(db, song_name)
+
+                if song and song.synthesized_audio_path and os.path.exists(song.synthesized_audio_path):
+                    st.subheader(f"🎵 播放：{song_name}")
+
+                    # 音频播放控件
+                    with open(song.synthesized_audio_path, "rb") as audio_file:
+                        st.audio(audio_file.read(), format="audio/mp3")
+
+                    # 关闭按钮
+                    if st.button("❌ 关闭播放器", key="close_audio_player"):
+                        del st.session_state.show_audio_player
+                        st.rerun()
+
+                else:
+                    st.error("音频文件不存在")
+                    del st.session_state.show_audio_player
+                    st.rerun()
+
+        except Exception as e:
+            st.error(f"播放失败：{e}")
+            del st.session_state.show_audio_player
+            st.rerun()

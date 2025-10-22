@@ -12,6 +12,7 @@ class Song(Base):
     composer = Column(String(100))  # 作曲家
     genre = Column(String(50))  # 音乐类型
     difficulty = Column(String(20))  # 难度等级
+    synthesized_audio_path = Column(String(500))  # 合成音频文件路径
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 

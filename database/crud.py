@@ -37,7 +37,7 @@ def search_songs_by_name(db: Session, search_term: str) -> List[Song]:
     return db.query(Song).filter(Song.name.contains(search_term)).order_by(Song.name).all()
 
 def update_song(db: Session, name: str, description: str = None, composer: str = None,
-               genre: str = None, difficulty: str = None) -> Optional[Song]:
+               genre: str = None, difficulty: str = None, synthesized_audio_path: str = None) -> Optional[Song]:
     """更新曲目信息"""
     db_song = get_song_by_name(db, name)
     if db_song:
@@ -49,6 +49,8 @@ def update_song(db: Session, name: str, description: str = None, composer: str =
             db_song.genre = genre
         if difficulty is not None:
             db_song.difficulty = difficulty
+        if synthesized_audio_path is not None:
+            db_song.synthesized_audio_path = synthesized_audio_path
         db.commit()
         db.refresh(db_song)
     return db_song

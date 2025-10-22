@@ -87,3 +87,38 @@ def merge_musicxml_to_midi(xml_paths, output_midi_path, instrument_name=None):
 def midi_to_mp3(midi_path, mp3_path, soundfont_path):
     fs = FluidSynth(sound_font=soundfont_path)
     fs.midi_to_audio(midi_path, mp3_path)
+
+def synthesize_all_sheets_to_mp3(xml_paths, output_mp3_path, soundfont_path="data/FluidR3_GM.sf2"):
+    """
+    将多个乐谱文件合成为一个MP3文件
+
+    参数：
+    - xml_paths: MusicXML 文件路径列表
+    - output_mp3_path: 输出的 MP3 路径
+    - soundfont_path: 音色库路径
+    """
+    import os
+    import tempfile
+
+    try:
+        # 创建临时MIDI文件
+        temp_midi = tempfile.mktemp(suffix='.mid')
+
+        # 合并所有乐谱为MIDI
+        merge_musicxml_to_midi(xml_paths, temp_midi)
+
+        # 确保输出目录存在
+        os.makedirs(os.path.dirname(output_mp3_path), exist_ok=True)
+
+        # 转换为MP3
+        midi_to_mp3(temp_midi, output_mp3_path, soundfont_path)
+
+        # 清理临时文件
+        if os.path.exists(temp_midi):
+            os.remove(temp_midi)
+
+        return True
+
+    except Exception as e:
+        print(f"❌ 合成MP3失败: {e}")
+        return False
