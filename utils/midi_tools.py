@@ -122,3 +122,88 @@ def synthesize_all_sheets_to_mp3(xml_paths, output_mp3_path, soundfont_path="dat
     except Exception as e:
         print(f"❌ 合成MP3失败: {e}")
         return False
+
+def synthesize_single_sheet_to_mp3(xml_path, output_mp3_path, instrument_name=None, soundfont_path="data/FluidR3_GM.sf2"):
+    """
+    将单个乐谱文件生成为MP3文件
+
+    参数：
+    - xml_path: MusicXML 文件路径
+    - output_mp3_path: 输出的 MP3 路径
+    - instrument_name: 乐器名称，如果为None则保持原有乐器
+    - soundfont_path: 音色库路径
+
+    返回：
+    - bool: 生成是否成功
+    """
+    import os
+    import tempfile
+
+    temp_midi = None
+    try:
+        # 详细验证输入文件
+        if not os.path.exists(xml_path):
+            print(f"❌ 乐谱文件不存在: {xml_path}")
+            return False
+
+        if os.path.getsize(xml_path) == 0:
+            print(f"❌ 乐谱文件为空: {xml_path}")
+            return False
+
+        # 验证音色库文件
+        if not os.path.exists(soundfont_path):
+            print(f"❌ 音色库文件不存在: {soundfont_path}")
+            return False
+
+        # 创建临时MIDI文件
+        temp_midi = tempfile.mktemp(suffix='.mid')
+        print(f"🔄 开始处理: {xml_path} -> {output_mp3_path}")
+
+        # 转换为MIDI
+        print(f"🎼 转换MusicXML为MIDI...")
+        musicxml_to_midi2(xml_path, temp_midi, instrument_name)
+
+        # 验证MIDI文件是否生成成功
+        if not os.path.exists(temp_midi) or os.path.getsize(temp_midi) == 0:
+            print(f"❌ MIDI文件生成失败或为空")
+            return False
+
+        # 确保输出目录存在
+        os.makedirs(os.path.dirname(output_mp3_path), exist_ok=True)
+
+        # 转换为MP3
+        print(f"🎵 转换MIDI为MP3...")
+        midi_to_mp3(temp_midi, output_mp3_path, soundfont_path)
+
+        # 验证MP3文件是否生成成功
+        if not os.path.exists(output_mp3_path):
+            print(f"❌ MP3文件生成失败")
+            return False
+
+        if os.path.getsize(output_mp3_path) == 0:
+            print(f"❌ MP3文件生成为空")
+            return False
+
+        # 验证MP3文件大小合理（至少1KB）
+        mp3_size = os.path.getsize(output_mp3_path)
+        if mp3_size < 1024:
+            print(f"❌ MP3文件过小，可能生成异常: {mp3_size}字节")
+            return False
+
+        print(f"✅ MP3生成成功: {output_mp3_path} ({mp3_size/1024:.1f}KB)")
+        return True
+
+    except Exception as e:
+        print(f"❌ MP3生成过程出错: {str(e)}")
+        import traceback
+        print(f"详细错误信息: {traceback.format_exc()}")
+        return False
+
+    finally:
+        # 清理临时文件
+        if temp_midi and os.path.exists(temp_midi):
+            try:
+                os.remove(temp_midi)
+                print(f"🧹 清理临时MIDI文件: {temp_midi}")
+            except:
+                pass

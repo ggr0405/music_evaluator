@@ -1,0 +1,58 @@
+2025-10-27 00:05:25,774 INFO [temp_tkzc2]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/git/music_evaluator/tmp/uploads/temp_tkzc2.png
+2025-10-27 00:05:25,902 INFO []                 Book.java:2531 | Stored /book.xml
+2025-10-27 00:05:25,902 INFO []                 Book.java:2491 | Book stored as tmp/output/temp_tkzc2.omr
+2025-10-27 00:05:25,910 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-10-27 00:05:25,911 INFO [temp_tkzc2]       StepMonitoring.java:98   | LOAD
+2025-10-27 00:05:25,978 INFO [temp_tkzc2]            SheetStub.java:1268 | Loaded image #1 1600x2263 from /Users/amber/Desktop/lxf/git/music_evaluator/tmp/uploads/temp_tkzc2.png
+2025-10-27 00:05:25,981 INFO [temp_tkzc2]            ImageUtil.java:124  | Converting max RGB to gray
+2025-10-27 00:05:26,088 INFO [temp_tkzc2]       StepMonitoring.java:98   | BINARY
+2025-10-27 00:05:26,267 INFO [temp_tkzc2]       StepMonitoring.java:98   | SCALE
+2025-10-27 00:05:26,284 INFO [temp_tkzc2]         ScaleBuilder.java:241  | Beam  guessed height:  6 -- 0.50 of 13 interline
+2025-10-27 00:05:26,284 INFO [temp_tkzc2]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.44 of [4..13] range at 86% of needed quorum
+2025-10-27 00:05:26,284 INFO [temp_tkzc2]            ScaleStep.java:65   | Scale{ interline(13,13,14) line(2,3,3) beam(8)}
+2025-10-27 00:05:26,285 INFO [temp_tkzc2]       StepMonitoring.java:98   | GRID
+2025-10-27 00:05:26,695 INFO [temp_tkzc2]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-10-27 00:05:26,735 INFO [temp_tkzc2]    ClustersRetriever.java:328  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,13,14)
+2025-10-27 00:05:26,827 INFO [temp_tkzc2]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-10-27 00:05:27,041 INFO [temp_tkzc2]        SystemManager.java:134  | Indentation detected for system #1
+2025-10-27 00:05:27,042 INFO [temp_tkzc2]        SystemManager.java:779  | 1 part along 6 systems
+2025-10-27 00:05:27,042 INFO [temp_tkzc2]                 Book.java:545  | Created scores: [{Score 1}]
+2025-10-27 00:05:27,043 INFO [temp_tkzc2]       StepMonitoring.java:98   | HEADERS
+2025-10-27 00:05:27,292 INFO [temp_tkzc2]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-10-27 00:05:27,294 INFO [temp_tkzc2]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Desktop/lxf/git/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-10-27 00:05:27,673 INFO [temp_tkzc2]       StepMonitoring.java:98   | STEM_SEEDS
+2025-10-27 00:05:27,697 INFO [temp_tkzc2]        StemSeedsStep.java:86   | stem(3 max:3)
+2025-10-27 00:05:27,714 INFO [temp_tkzc2]       StepMonitoring.java:98   | BEAMS
+2025-10-27 00:05:28,343 INFO [temp_tkzc2]       StepMonitoring.java:98   | LEDGERS
+2025-10-27 00:05:28,380 INFO [temp_tkzc2]       StepMonitoring.java:98   | HEADS
+2025-10-27 00:05:29,292 INFO [temp_tkzc2]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.5,R:-0.0] NOTEHEAD_BLACK[L:-0.4,R:-0.3]}
+2025-10-27 00:05:29,292 INFO [temp_tkzc2]       StepMonitoring.java:98   | STEMS
+2025-10-27 00:05:29,448 INFO [temp_tkzc2]       StepMonitoring.java:98   | REDUCTION
+2025-10-27 00:05:29,480 INFO [temp_tkzc2]        ReductionStep.java:105  | Stems free length median value: 47 pixels, 3.6 interlines
+2025-10-27 00:05:29,482 INFO [temp_tkzc2]       StepMonitoring.java:98   | CUE_BEAMS
+2025-10-27 00:05:29,482 INFO [temp_tkzc2]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-10-27 00:05:29,482 INFO [temp_tkzc2]       StepMonitoring.java:98   | TEXTS
+2025-10-27 00:05:29,518 WARN [temp_tkzc2]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-10-27 00:05:29,518 INFO [temp_tkzc2]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-10-27 00:05:29,521 INFO [temp_tkzc2]       StepMonitoring.java:98   | MEASURES
+2025-10-27 00:05:29,526 INFO [temp_tkzc2]                 Page.java:307  | 24 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 4 in system#4, 4 in system#5, 4 in system#6]
+2025-10-27 00:05:29,526 INFO [temp_tkzc2]       StepMonitoring.java:98   | CHORDS
+2025-10-27 00:05:29,533 INFO [temp_tkzc2]       StepMonitoring.java:98   | CURVES
+2025-10-27 00:05:29,915 INFO [temp_tkzc2]         SlursBuilder.java:240  | Slurs: 1
+2025-10-27 00:05:29,917 INFO [temp_tkzc2]      SegmentsBuilder.java:155  | Segments: 2
+2025-10-27 00:05:29,918 INFO [temp_tkzc2]       StepMonitoring.java:98   | SYMBOLS
+2025-10-27 00:05:29,992 INFO [temp_tkzc2]       StepMonitoring.java:98   | LINKS
+2025-10-27 00:05:30,007 INFO [temp_tkzc2]       StepMonitoring.java:98   | RHYTHMS
+2025-10-27 00:05:30,036 INFO [temp_tkzc2]       StepMonitoring.java:98   | PAGE
+2025-10-27 00:05:30,038 INFO [temp_tkzc2]                 Book.java:2550 | Book{temp_tkzc2} storing
+2025-10-27 00:05:30,058 INFO [temp_tkzc2]                 Book.java:2531 | Stored /book.xml
+2025-10-27 00:05:30,101 INFO [temp_tkzc2]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-10-27 00:05:30,387 INFO [temp_tkzc2]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-10-27 00:05:30,387 INFO [temp_tkzc2]                 Book.java:2491 | Book stored as tmp/output/temp_tkzc2.omr
+2025-10-27 00:05:30,388 INFO [temp_tkzc2]            SheetStub.java:1644 | Disposed sheet
+2025-10-27 00:05:30,407 INFO [temp_tkzc2]                 Book.java:2018 | End of Stub#1 memory: 30,201,352
+2025-10-27 00:05:30,408 INFO [temp_tkzc2]                 Book.java:2025 | Book processed.
+2025-10-27 00:05:30,520 INFO [temp_tkzc2]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-10-27 00:05:30,646 INFO [temp_tkzc2]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1]
+2025-10-27 00:05:30,678 INFO [temp_tkzc2]        ScoreExporter.java:164  | Score temp_tkzc2 exported to tmp/output/temp_tkzc2.mxl
+2025-10-27 00:05:30,693 INFO [temp_tkzc2]                Score.java:181  | Closing {Score 1}

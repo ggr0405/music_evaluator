@@ -1,0 +1,22 @@
+2025-10-27 00:05:04,861 INFO [temp_dogecoin-logo(1)]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/git/music_evaluator/tmp/uploads/temp_dogecoin-logo(1).png
+2025-10-27 00:05:04,941 INFO []                 Book.java:2531 | Stored /book.xml
+2025-10-27 00:05:04,941 INFO []                 Book.java:2491 | Book stored as tmp/output/temp_dogecoin-logo(1).omr
+2025-10-27 00:05:04,946 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-10-27 00:05:04,946 INFO [temp_dogecoin-logo(1)]       StepMonitoring.java:98   | LOAD
+2025-10-27 00:05:04,961 INFO [temp_dogecoin-logo(1)]            SheetStub.java:1268 | Loaded image #1 242x53 from /Users/amber/Desktop/lxf/git/music_evaluator/tmp/uploads/temp_dogecoin-logo(1).png
+2025-10-27 00:05:04,962 INFO [temp_dogecoin-logo(1)]            ImageUtil.java:206  | Discarding alpha band ...
+2025-10-27 00:05:04,965 INFO [temp_dogecoin-logo(1)]            ImageUtil.java:124  | Converting max RGB to gray
+2025-10-27 00:05:04,967 INFO [temp_dogecoin-logo(1)]       StepMonitoring.java:98   | BINARY
+2025-10-27 00:05:04,994 INFO [temp_dogecoin-logo(1)]       StepMonitoring.java:98   | SCALE
+2025-10-27 00:05:04,996 INFO [temp_dogecoin-logo(1)]                 Book.java:545  | Created scores: []
+2025-10-27 00:05:04,996 INFO [temp_dogecoin-logo(1)]            SheetStub.java:1186 | Sheet temp_dogecoin-logo(1) flagged as invalid.
+2025-10-27 00:05:04,996 INFO [temp_dogecoin-logo(1)]            SheetStub.java:1394 | StepException cause detected in [LOAD, BINARY, SCALE, GRID, HEADERS, STEM_SEEDS, BEAMS, LEDGERS, HEADS, STEMS, REDUCTION, CUE_BEAMS, TEXTS, MEASURES, CHORDS, CURVES, SYMBOLS, LINKS, RHYTHMS, PAGE]
+2025-10-27 00:05:04,997 INFO [temp_dogecoin-logo(1)]                 Book.java:2550 | Book{temp_dogecoin-logo(1)} storing
+2025-10-27 00:05:05,005 INFO [temp_dogecoin-logo(1)]                 Book.java:2531 | Stored /book.xml
+2025-10-27 00:05:05,009 INFO [temp_dogecoin-logo(1)]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-10-27 00:05:05,094 INFO [temp_dogecoin-logo(1)]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-10-27 00:05:05,094 INFO [temp_dogecoin-logo(1)]                 Book.java:2491 | Book stored as tmp/output/temp_dogecoin-logo(1).omr
+2025-10-27 00:05:05,095 INFO [temp_dogecoin-logo(1)]            SheetStub.java:1644 | Disposed sheet
+2025-10-27 00:05:05,110 INFO [temp_dogecoin-logo(1)]                 Book.java:2018 | End of Stub#1 memory: 10,458,808
+2025-10-27 00:05:05,110 INFO [temp_dogecoin-logo(1)]                 Book.java:2025 | Book processed.
+2025-10-27 00:05:05,110 INFO [temp_dogecoin-logo(1)]                 Book.java:599  | Could not export since transcription did not complete successfully

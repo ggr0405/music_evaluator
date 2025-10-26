@@ -66,14 +66,15 @@ def delete_song(db: Session, name: str) -> bool:
 
 # Solo CRUD
 def create_solo(db: Session, song_name: str, instrument: str, file_path: str,
-               original_filename: str = None, file_size: int = None) -> Solo:
+               original_filename: str = None, file_size: int = None, mp3_path: str = None) -> Solo:
     """创建单奏乐谱记录"""
     db_solo = Solo(
         song_name=song_name,
         instrument=instrument,
         file_path=file_path,
         original_filename=original_filename,
-        file_size=file_size
+        file_size=file_size,
+        mp3_path=mp3_path
     )
     db.add(db_solo)
     db.commit()
@@ -97,12 +98,14 @@ def delete_solo(db: Session, solo_id: int) -> bool:
         return True
     return False
 
-def update_solo(db: Session, solo_id: int, instrument: str = None) -> Optional[Solo]:
+def update_solo(db: Session, solo_id: int, instrument: str = None, mp3_path: str = None) -> Optional[Solo]:
     """更新单奏乐谱信息"""
     db_solo = get_solo_by_id(db, solo_id)
     if db_solo:
         if instrument is not None:
             db_solo.instrument = instrument
+        if mp3_path is not None:
+            db_solo.mp3_path = mp3_path
         db.commit()
         db.refresh(db_solo)
     return db_solo

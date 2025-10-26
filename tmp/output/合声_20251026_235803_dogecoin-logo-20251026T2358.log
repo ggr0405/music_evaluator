@@ -1,0 +1,22 @@
+2025-10-26 23:58:14,060 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/天空之城/合声_20251026_235803_dogecoin-logo.png
+2025-10-26 23:58:14,125 INFO []                 Book.java:2531 | Stored /book.xml
+2025-10-26 23:58:14,125 INFO []                 Book.java:2491 | Book stored as tmp/output/合声_20251026_235803_dogecoin-logo.omr
+2025-10-26 23:58:14,128 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-10-26 23:58:14,129 INFO [合声_20251026_235803_dogecoin-logo]       StepMonitoring.java:98   | LOAD
+2025-10-26 23:58:14,141 INFO [合声_20251026_235803_dogecoin-logo]            SheetStub.java:1268 | Loaded image #1 242x53 from /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/天空之城/合声_20251026_235803_dogecoin-logo.png
+2025-10-26 23:58:14,142 INFO [合声_20251026_235803_dogecoin-logo]            ImageUtil.java:206  | Discarding alpha band ...
+2025-10-26 23:58:14,145 INFO [合声_20251026_235803_dogecoin-logo]            ImageUtil.java:124  | Converting max RGB to gray
+2025-10-26 23:58:14,147 INFO [合声_20251026_235803_dogecoin-logo]       StepMonitoring.java:98   | BINARY
+2025-10-26 23:58:14,169 INFO [合声_20251026_235803_dogecoin-logo]       StepMonitoring.java:98   | SCALE
+2025-10-26 23:58:14,171 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:545  | Created scores: []
+2025-10-26 23:58:14,171 INFO [合声_20251026_235803_dogecoin-logo]            SheetStub.java:1186 | Sheet 合声_20251026_235803_dogecoin-logo flagged as invalid.
+2025-10-26 23:58:14,171 INFO [合声_20251026_235803_dogecoin-logo]            SheetStub.java:1394 | StepException cause detected in [LOAD, BINARY, SCALE, GRID, HEADERS, STEM_SEEDS, BEAMS, LEDGERS, HEADS, STEMS, REDUCTION, CUE_BEAMS, TEXTS, MEASURES, CHORDS, CURVES, SYMBOLS, LINKS, RHYTHMS, PAGE]
+2025-10-26 23:58:14,171 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:2550 | Book{合声_20251026_235803_dogecoin-logo} storing
+2025-10-26 23:58:14,180 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:2531 | Stored /book.xml
+2025-10-26 23:58:14,183 INFO [合声_20251026_235803_dogecoin-logo]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-10-26 23:58:14,265 INFO [合声_20251026_235803_dogecoin-logo]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-10-26 23:58:14,266 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:2491 | Book stored as tmp/output/合声_20251026_235803_dogecoin-logo.omr
+2025-10-26 23:58:14,267 INFO [合声_20251026_235803_dogecoin-logo]            SheetStub.java:1644 | Disposed sheet
+2025-10-26 23:58:14,281 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:2018 | End of Stub#1 memory: 10,523,968
+2025-10-26 23:58:14,281 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:2025 | Book processed.
+2025-10-26 23:58:14,281 INFO [合声_20251026_235803_dogecoin-logo]                 Book.java:599  | Could not export since transcription did not complete successfully

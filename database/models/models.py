@@ -31,6 +31,7 @@ class Solo(Base):
     file_path = Column(String(500), nullable=False)  # 乐谱文件路径
     original_filename = Column(String(200))  # 原始文件名
     file_size = Column(Integer)  # 文件大小（字节）
+    mp3_path = Column(String(500))  # 单独生成的MP3文件路径
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # 关系
