@@ -123,6 +123,7 @@ class PerformanceScore(Base):
     recording_id = Column(Integer, ForeignKey("performance_recordings.id"), nullable=False)
     project_id = Column(Integer, ForeignKey("sheet_music_projects.id"), nullable=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=True)  # 允许匿名评分
+    reference_solo_id = Column(Integer, ForeignKey("solos.id"), nullable=True)  # 参考乐谱ID
     overall_score = Column(Integer)
     pitch_score = Column(Integer)
     rhythm_score = Column(Integer)
@@ -138,3 +139,4 @@ class PerformanceScore(Base):
     recording = relationship("PerformanceRecording", back_populates="scores")
     project = relationship("SheetMusicProject", back_populates="scores")
     user = relationship("User", back_populates="scores")
+    reference_solo = relationship("Solo", foreign_keys=[reference_solo_id])
