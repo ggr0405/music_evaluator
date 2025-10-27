@@ -296,6 +296,62 @@ def render_recording_upload_form(song_name: str):
         st.warning("⚠️ 该曲目暂无乐谱，无法进行评分。请先上传乐谱文件。")
         return
 
+    # 参考乐谱选择（移到表单外，实现实时更新）
+    st.markdown("**参考乐谱选择 ***")
+
+    # 创建乐谱选择选项
+    solo_options = []
+    solo_mapping = {}
+
+    for solo in available_solos:
+        # 显示乐谱信息：乐器 - 文件名 - MP3状态
+        mp3_status = "🎵" if solo['mp3_path'] and os.path.exists(solo['mp3_path']) else "❌"
+        display_name = f"{solo['instrument']} - {solo['original_filename'] or '未知文件'} {mp3_status}"
+        solo_options.append(display_name)
+        solo_mapping[display_name] = solo
+
+    selected_solo_display = st.selectbox(
+        "选择用于对比的标准乐谱",
+        solo_options,
+        help="选择一个乐谱作为评分对比的标准。演奏乐器类型将自动根据所选乐谱确定。🎵表示有MP3文件，❌表示无MP3文件。",
+        key="score_selection"
+    )
+
+    selected_solo = solo_mapping.get(selected_solo_display)
+
+    # 显示选中乐谱的详细信息和自动设置乐器类型（移到表单外，实现实时更新）
+    if selected_solo:
+        # 自动使用选中乐谱的乐器类型
+        instrument = selected_solo['instrument']
+
+        # 显示乐器信息提示
+        st.info(f"🎵 演奏乐器将自动设置为：**{instrument}**（根据选中乐谱确定）")
+
+        with st.expander("📋 查看选中乐谱详情"):
+            col1, col2 = st.columns(2)
+            with col1:
+                st.write(f"**乐器类型：** {selected_solo['instrument']}")
+                st.write(f"**文件名：** {selected_solo['original_filename']}")
+                st.write(f"**上传时间：** {selected_solo['created_at'].strftime('%Y-%m-%d %H:%M')}")
+
+            with col2:
+                if selected_solo['file_size']:
+                    size_kb = selected_solo['file_size'] / 1024
+                    st.write(f"**文件大小：** {size_kb:.1f} KB")
+
+                mp3_available = selected_solo['mp3_path'] and os.path.exists(selected_solo['mp3_path'])
+                st.write(f"**MP3状态：** {'✅ 可用' if mp3_available else '❌ 不可用'}")
+
+                # 如果有MP3文件，提供试听
+                if mp3_available:
+                    st.write("**🎵 乐谱试听：**")
+                    with open(selected_solo['mp3_path'], "rb") as audio_file:
+                        st.audio(audio_file.read(), format="audio/mp3")
+    else:
+        # 如果没有选中乐谱，设置默认值
+        instrument = "合声"
+
+    # 现在开始表单部分
     with st.form(f"upload_recording_form_{st.session_state.upload_form_key}"):
         # 演奏者名称
         performer_name = st.text_input(
@@ -303,60 +359,6 @@ def render_recording_upload_form(song_name: str):
             placeholder="请输入演奏者姓名",
             help="必填字段"
         )
-
-        # 参考乐谱选择
-        st.markdown("**参考乐谱选择 ***")
-
-        # 创建乐谱选择选项
-        solo_options = []
-        solo_mapping = {}
-
-        for solo in available_solos:
-            # 显示乐谱信息：乐器 - 文件名 - MP3状态
-            mp3_status = "🎵" if solo['mp3_path'] and os.path.exists(solo['mp3_path']) else "❌"
-            display_name = f"{solo['instrument']} - {solo['original_filename'] or '未知文件'} {mp3_status}"
-            solo_options.append(display_name)
-            solo_mapping[display_name] = solo
-
-        selected_solo_display = st.selectbox(
-            "选择用于对比的标准乐谱",
-            solo_options,
-            help="选择一个乐谱作为评分对比的标准。演奏乐器类型将自动根据所选乐谱确定。🎵表示有MP3文件，❌表示无MP3文件。"
-        )
-
-        selected_solo = solo_mapping.get(selected_solo_display)
-
-        # 显示选中乐谱的详细信息和自动设置乐器类型
-        if selected_solo:
-            # 自动使用选中乐谱的乐器类型
-            instrument = selected_solo['instrument']
-
-            # 显示乐器信息提示
-            st.info(f"🎵 演奏乐器将自动设置为：**{instrument}**（根据选中乐谱确定）")
-
-            with st.expander("📋 查看选中乐谱详情"):
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.write(f"**乐器类型：** {selected_solo['instrument']}")
-                    st.write(f"**文件名：** {selected_solo['original_filename']}")
-                    st.write(f"**上传时间：** {selected_solo['created_at'].strftime('%Y-%m-%d %H:%M')}")
-
-                with col2:
-                    if selected_solo['file_size']:
-                        size_kb = selected_solo['file_size'] / 1024
-                        st.write(f"**文件大小：** {size_kb:.1f} KB")
-
-                    mp3_available = selected_solo['mp3_path'] and os.path.exists(selected_solo['mp3_path'])
-                    st.write(f"**MP3状态：** {'✅ 可用' if mp3_available else '❌ 不可用'}")
-
-                # 如果有MP3文件，提供试听
-                if mp3_available:
-                    st.write("**🎵 乐谱试听：**")
-                    with open(selected_solo['mp3_path'], "rb") as audio_file:
-                        st.audio(audio_file.read(), format="audio/mp3")
-        else:
-            # 如果没有选中乐谱，设置默认值
-            instrument = "合声"
 
         # 文件上传
         uploaded_file = st.file_uploader(
