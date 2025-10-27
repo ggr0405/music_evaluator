@@ -176,7 +176,7 @@ def render_add_sheet_form(song_name: str):
         # 乐器选择
         instrument = st.selectbox(
             "乐器类型",
-            ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"],
+            ["合声", "Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"],
             help="选择乐器类型"
         )
 
@@ -329,7 +329,7 @@ def render_edit_solo_form(solo):
     with st.form(f"edit_solo_form_{solo.id}"):
         # 只允许修改乐器名称
         current_index = 0
-        instrument_options = ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+        instrument_options = ["合声", "Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
         if solo.instrument in instrument_options:
             current_index = instrument_options.index(solo.instrument)
 

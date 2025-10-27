@@ -112,6 +112,7 @@ PYTHONPATH=. python -m streamlit run app.py
 
 2. **乐器类型支持**
    - 合声（Ensemble）
+   - Piano（钢琴）
    - Violin（小提琴）
    - Clarinet（单簧管）
    - Trumpet（小号）

@@ -20,7 +20,7 @@ def get_instruments_from_score(file_path):
     all_instruments = [name for name, obj in inspect.getmembers(instrument)
                        if inspect.isclass(obj) and issubclass(obj, instrument.Instrument)]
     #return  all_instruments
-    return ["Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+    return ["Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
 
 def musicxml_to_midi(xml_path, midi_path, instrument_name='Piano'):
     score = converter.parse(xml_path)
