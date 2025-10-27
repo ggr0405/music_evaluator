@@ -7,7 +7,8 @@ import shutil
 from datetime import datetime
 from database.utils import get_db_session
 from database.crud import (
-    create_solo, get_solos_by_song, delete_solo, update_solo, get_solo_by_id
+    create_solo, get_solos_by_song, delete_solo, update_solo, get_solo_by_id,
+    get_solo_by_song_and_instrument
 )
 from utils.omr import run_audiveris
 
@@ -172,14 +173,25 @@ def render_add_sheet_form(song_name: str):
     """渲染添加乐谱表单"""
     st.subheader("➕ 添加新乐谱")
 
-    with st.form("add_sheet_form"):
-        # 乐器选择
-        instrument = st.selectbox(
-            "乐器类型",
-            ["合声", "Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"],
-            help="选择乐器类型"
-        )
+    # 乐器选择（放在表单外，这样可以实时更新）
+    instrument = st.selectbox(
+        "乐器类型",
+        ["合声", "Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"],
+        help="选择乐器类型",
+        key="instrument_select"
+    )
 
+    # 检查是否已存在同乐器的乐谱并提示用户（放在表单外）
+    if instrument:
+        try:
+            with get_db_session() as db:
+                existing_solo = get_solo_by_song_and_instrument(db, song_name, instrument)
+                if existing_solo:
+                    st.warning(f"⚠️ 该曲目已存在 '{instrument}' 乐器的乐谱（文件：{existing_solo.original_filename}）。上传新文件将覆盖现有乐谱。")
+        except:
+            pass  # 忽略数据库查询错误
+
+    with st.form("add_sheet_form"):
         # 文件上传
         uploaded_file = st.file_uploader(
             "选择乐谱文件",
@@ -275,20 +287,50 @@ def render_add_sheet_form(song_name: str):
                     # 移动文件到正式位置
                     shutil.move(temp_file_path, file_path)
 
-                    # 保存到数据库
+                    # 检查是否已存在同乐器的乐谱
                     with get_db_session() as db:
-                        create_solo(
-                            db=db,
-                            song_name=song_name,
-                            instrument=instrument,
-                            file_path=file_path,
-                            original_filename=uploaded_file.name,
-                            file_size=temp_file_size,
-                            mp3_path=mp3_path
-                        )
+                        existing_solo = get_solo_by_song_and_instrument(db, song_name, instrument)
 
-                        progress_bar.progress(100, text="保存完成！")
-                        st.success(f"✅ 乐谱 '{instrument}' 添加成功，MP3文件已生成！")
+                        if existing_solo:
+                            # 更新已有乐谱
+                            # 删除旧文件
+                            if existing_solo.file_path and os.path.exists(existing_solo.file_path):
+                                try:
+                                    os.remove(existing_solo.file_path)
+                                except:
+                                    pass  # 忽略删除错误
+                            if existing_solo.mp3_path and os.path.exists(existing_solo.mp3_path):
+                                try:
+                                    os.remove(existing_solo.mp3_path)
+                                except:
+                                    pass  # 忽略删除错误
+
+                            # 更新数据库记录
+                            update_solo(
+                                db=db,
+                                solo_id=existing_solo.id,
+                                file_path=file_path,
+                                original_filename=uploaded_file.name,
+                                file_size=temp_file_size,
+                                mp3_path=mp3_path
+                            )
+
+                            progress_bar.progress(100, text="更新完成！")
+                            st.success(f"✅ 乐谱 '{instrument}' 更新成功，MP3文件已重新生成！")
+                        else:
+                            # 创建新乐谱
+                            create_solo(
+                                db=db,
+                                song_name=song_name,
+                                instrument=instrument,
+                                file_path=file_path,
+                                original_filename=uploaded_file.name,
+                                file_size=temp_file_size,
+                                mp3_path=mp3_path
+                            )
+
+                            progress_bar.progress(100, text="保存完成！")
+                            st.success(f"✅ 乐谱 '{instrument}' 添加成功，MP3文件已生成！")
 
                         # 显示播放控件
                         st.info("🎵 您可以立即播放生成的MP3文件：")

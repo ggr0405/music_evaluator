@@ -89,6 +89,13 @@ def get_solo_by_id(db: Session, solo_id: int) -> Optional[Solo]:
     """根据ID获取单奏乐谱"""
     return db.query(Solo).filter(Solo.id == solo_id).first()
 
+def get_solo_by_song_and_instrument(db: Session, song_name: str, instrument: str) -> Optional[Solo]:
+    """根据曲目名称和乐器类型获取单奏乐谱"""
+    return db.query(Solo).filter(
+        Solo.song_name == song_name,
+        Solo.instrument == instrument
+    ).first()
+
 def delete_solo(db: Session, solo_id: int) -> bool:
     """删除单奏乐谱"""
     db_solo = get_solo_by_id(db, solo_id)
@@ -98,14 +105,24 @@ def delete_solo(db: Session, solo_id: int) -> bool:
         return True
     return False
 
-def update_solo(db: Session, solo_id: int, instrument: str = None, mp3_path: str = None) -> Optional[Solo]:
+def update_solo(db: Session, solo_id: int, instrument: str = None, file_path: str = None,
+               original_filename: str = None, file_size: int = None, mp3_path: str = None) -> Optional[Solo]:
     """更新单奏乐谱信息"""
     db_solo = get_solo_by_id(db, solo_id)
     if db_solo:
         if instrument is not None:
             db_solo.instrument = instrument
+        if file_path is not None:
+            db_solo.file_path = file_path
+        if original_filename is not None:
+            db_solo.original_filename = original_filename
+        if file_size is not None:
+            db_solo.file_size = file_size
         if mp3_path is not None:
             db_solo.mp3_path = mp3_path
+        # Update the modification timestamp
+        from datetime import datetime
+        db_solo.created_at = datetime.now()
         db.commit()
         db.refresh(db_solo)
     return db_solo
