@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1.1" />
+    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1.4">
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-arpa.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-basso.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-cello.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-clarinetti.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-corno 1,2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-corno 3,4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-fagoto.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-flute.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-glockenspiel.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-oboe.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-percussion.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-piano.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-piccolo.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-timpani.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-tromba.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-trombone.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花-tuba.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花一提带弓法.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花中提带弓法.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-files/茉莉花分谱/茉莉花二提带弓法.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-wal" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,19 +52,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.a.executor&quot;: &quot;Run&quot;,
-    &quot;Python.async_p2v_realtime_v2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/amber/Desktop/lxf/git/music_evaluator/data&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.2.executor": "Run",
+    "Python.a.executor": "Run",
+    "Python.async_p2v_realtime_v2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/amber/Desktop/lxf/git/music_evaluator/test-files"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test-files" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -232,7 +257,71 @@
       <option name="project" value="LOCAL" />
       <updated>1761118078855</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1.1">
+      <option name="closed" value="true" />
+      <created>1761494837203</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1761494837203</updated>
+    </task>
+    <task id="LOCAL-00014" summary="1.2">
+      <option name="closed" value="true" />
+      <created>1761496551825</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1761496551825</updated>
+    </task>
+    <task id="LOCAL-00015" summary="1.3">
+      <option name="closed" value="true" />
+      <created>1761531843862</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1761531843862</updated>
+    </task>
+    <task id="LOCAL-00016" summary="1.4">
+      <option name="closed" value="true" />
+      <created>1761533269446</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1761533269446</updated>
+    </task>
+    <task id="LOCAL-00017" summary="1.4">
+      <option name="closed" value="true" />
+      <created>1761533293996</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1761533293996</updated>
+    </task>
+    <task id="LOCAL-00018" summary="1.4">
+      <option name="closed" value="true" />
+      <created>1761533651855</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1761533651856</updated>
+    </task>
+    <task id="LOCAL-00019" summary="1.4">
+      <option name="closed" value="true" />
+      <created>1761533656158</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1761533656158</updated>
+    </task>
+    <task id="LOCAL-00020" summary="1.4">
+      <option name="closed" value="true" />
+      <created>1761533685923</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1761533685923</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,6 +329,9 @@
     <MESSAGE value="empty" />
     <MESSAGE value="1.0" />
     <MESSAGE value="1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1" />
+    <MESSAGE value="1.2" />
+    <MESSAGE value="1.3" />
+    <MESSAGE value="1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.4" />
   </component>
 </project>
