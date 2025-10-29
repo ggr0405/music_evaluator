@@ -116,7 +116,7 @@ PYTHONPATH=. python -m streamlit run app.py
    - Violin（小提琴）
    - Clarinet（单簧管）
    - Trumpet（小号）
-   - Cello（大提琴）
+   - Violoncello（大提琴）
    - Flute（长笛）
 
 ### 🎤 演奏评分

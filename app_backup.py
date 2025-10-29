@@ -4,6 +4,7 @@ from utils.song_manager import render_song_sidebar_content, get_selected_song
 from utils.sheet_manager import render_sheet_music_management
 from database.utils import get_db_session
 from database.init_db import init_db
+from config.instruments import get_instrument_choices
 
 # 初始化数据库
 init_db()
@@ -223,7 +224,7 @@ with main_container:
                     if mxls:
                         st.success(f"✅ 所有 {len(mxls)} 页乐谱识别完成")
                         st.session_state['mxls'] = mxls
-                        st.session_state['instrument_names'] = ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+                        st.session_state['instrument_names'] = get_instrument_choices()
                     else:
                         st.error("识别失败，请检查图像质量或识别流程")
             else:

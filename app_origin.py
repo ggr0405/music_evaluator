@@ -4,6 +4,7 @@ from pathlib import Path
 from utils.omr import run_audiveris
 from utils.midi_tools import musicxml_to_midi2, midi_to_mp3, get_instruments_from_score,merge_musicxml_to_midi
 from utils.compare_audio2 import compare_audio2
+from config.instruments import get_instrument_choices
 
 os.makedirs("data/uploads", exist_ok=True)
 os.makedirs("data/output", exist_ok=True)
@@ -11,7 +12,7 @@ os.makedirs("data/output", exist_ok=True)
 mxls = None
 mid_path = "data/output/ref.mid"
 mp3_path = "data/output/ref.mp3"
-instrument_names = []
+instrument_names = get_instrument_choices()
 
 st.title("🎼 智能乐谱识别与演奏评分系统")
 
@@ -42,7 +43,7 @@ if uploaded_image:
     base_name = Path(uploaded_image.name).stem
     f"data/output/{base_name}.mxl"
     if mxls is not None and len(mxls)>0:
-        instrument_names = ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+        instrument_names = get_instrument_choices()
         st.success("乐谱识别完成 ✔️")
     else:
         st.error("乐谱识别失败，请检查上传的文件和识别流程。")
@@ -99,7 +100,7 @@ if st.session_state.uploaded_images:
         if mxls:
             st.success(f"✅ 所有 {len(mxls)} 页乐谱识别完成")
             st.session_state['mxls'] = mxls
-            st.session_state['instrument_names'] = ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+            st.session_state['instrument_names'] = get_instrument_choices()
         else:
             st.error("识别失败，请检查图像质量或识别流程")
 else:

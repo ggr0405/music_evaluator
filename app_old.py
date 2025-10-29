@@ -8,6 +8,7 @@ from utils.song_manager import render_song_sidebar, render_song_sidebar_content,
 from utils.sheet_manager import render_sheet_music_management
 from database.utils import get_db_session
 from database.crud import create_project
+from config.instruments import get_instrument_choices
 from database.init_db import init_db
 
 # 初始化数据库
@@ -19,7 +20,7 @@ os.makedirs("data/output", exist_ok=True)
 mxls = None
 mid_path = "data/output/ref.mid"
 mp3_path = "data/output/ref.mp3"
-instrument_names = []
+instrument_names = get_instrument_choices()
 
 # 页面配置
 st.set_page_config(
@@ -166,7 +167,7 @@ with main_container:
                     if mxls:
                         st.success(f"✅ 所有 {len(mxls)} 页乐谱识别完成")
                         st.session_state['mxls'] = mxls
-                        st.session_state['instrument_names'] = ["合声", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+                        st.session_state['instrument_names'] = get_instrument_choices()
                     else:
                         st.error("识别失败，请检查图像质量或识别流程")
             else:

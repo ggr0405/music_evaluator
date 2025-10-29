@@ -1,6 +1,7 @@
 import inspect
 from music21 import converter, stream, instrument
 from midi2audio import FluidSynth
+from config.instruments import get_midi_instruments
 def get_instruments_from_score(file_path):
     """
     读取 MusicXML 文件，返回声部对应的乐器名称列表。
@@ -17,10 +18,8 @@ def get_instruments_from_score(file_path):
         instruments.append(name)
     #return instruments
 
-    all_instruments = [name for name, obj in inspect.getmembers(instrument)
-                       if inspect.isclass(obj) and issubclass(obj, instrument.Instrument)]
-    #return  all_instruments
-    return ["Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+    # 返回music21中实际存在的乐器名称
+    return get_midi_instruments()
 
 def musicxml_to_midi(xml_path, midi_path, instrument_name='Piano'):
     score = converter.parse(xml_path)
@@ -43,7 +42,31 @@ def musicxml_to_midi2(xml_path, midi_path, instrument_name=None):
 
     # instrument_name == None 时，不做任何修改，合成全部声部
 
-    score.write('midi', fp=midi_path)
+    # 尝试处理repeat相关的问题
+    try:
+        # 先尝试正常写入
+        score.write('midi', fp=midi_path)
+    except Exception as e:
+        if "badly formed repeats" in str(e):
+            print(f"⚠️ 检测到repeat标记问题，尝试移除repeat标记后重新转换...")
+            # 移除所有repeat相关的标记
+            from music21 import repeat
+            for part in score.parts:
+                # 移除repeat相关的元素
+                repeats_to_remove = []
+                for element in part.recurse():
+                    if hasattr(element, 'classes') and any('Repeat' in cls for cls in element.classes):
+                        repeats_to_remove.append(element)
+                for repeat_elem in repeats_to_remove:
+                    try:
+                        part.remove(repeat_elem, recurse=True)
+                    except:
+                        pass
+            # 重新尝试写入
+            score.write('midi', fp=midi_path)
+        else:
+            # 如果不是repeat问题，重新抛出异常
+            raise e
 
 
 def merge_musicxml_to_midi(xml_paths, output_midi_path, instrument_name=None):

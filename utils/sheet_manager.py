@@ -11,6 +11,7 @@ from database.crud import (
     get_solo_by_song_and_instrument
 )
 from utils.omr import run_audiveris
+from config.instruments import get_instrument_choices
 
 # 永久存储目录
 SHEET_MUSIC_DIR = "data/sheet_music"
@@ -176,7 +177,7 @@ def render_add_sheet_form(song_name: str):
     # 乐器选择（放在表单外，这样可以实时更新）
     instrument = st.selectbox(
         "乐器类型",
-        ["合声", "Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"],
+        get_instrument_choices(),
         help="选择乐器类型",
         key="instrument_select"
     )
@@ -371,7 +372,7 @@ def render_edit_solo_form(solo):
     with st.form(f"edit_solo_form_{solo.id}"):
         # 只允许修改乐器名称
         current_index = 0
-        instrument_options = ["合声", "Piano", "Clarinet", "Trumpet", "Violin", "Cello", "Flute"]
+        instrument_options = get_instrument_choices()
         if solo.instrument in instrument_options:
             current_index = instrument_options.index(solo.instrument)
 
