@@ -1,0 +1,65 @@
+2025-10-30 23:02:58,698 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/茉莉花/Violoncello_20251030_004401_茉莉花-cello.pdf
+2025-10-30 23:02:58,830 INFO []                 Book.java:2531 | Stored /book.xml
+2025-10-30 23:02:58,830 INFO []                 Book.java:2491 | Book stored as data/output/Violoncello_20251030_004401_茉莉花-cello.omr
+2025-10-30 23:02:58,835 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-10-30 23:02:58,836 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | LOAD
+2025-10-30 23:02:59,068 INFO [Violoncello_20251030_004401_茉莉花-cello]            SheetStub.java:1268 | Loaded image #1 2479x3508 from /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/茉莉花/Violoncello_20251030_004401_茉莉花-cello.pdf
+2025-10-30 23:02:59,069 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | BINARY
+2025-10-30 23:02:59,299 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | SCALE
+2025-10-30 23:02:59,317 INFO [Violoncello_20251030_004401_茉莉花-cello]         ScaleBuilder.java:241  | Beam  guessed height:  9 -- 0.50 of 18 interline
+2025-10-30 23:02:59,318 INFO [Violoncello_20251030_004401_茉莉花-cello]         ScaleBuilder.java:264  | Beam measured height:  9 -- 0.31 of [5..18] range at 561% of needed quorum
+2025-10-30 23:02:59,318 INFO [Violoncello_20251030_004401_茉莉花-cello]            ScaleStep.java:65   | Scale{ interline(17,18,18) line(1,1,2) beam(9)}
+2025-10-30 23:02:59,318 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | GRID
+2025-10-30 23:02:59,574 INFO [Violoncello_20251030_004401_茉莉花-cello]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-10-30 23:02:59,591 INFO [Violoncello_20251030_004401_茉莉花-cello]    ClustersRetriever.java:328  | Retrieved raw line clusters: 11 of sizes [5] with interline(17,18,18)
+2025-10-30 23:02:59,655 INFO [Violoncello_20251030_004401_茉莉花-cello]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6] #7[7] #8[8] #9[9] #10[10] #11[11]
+2025-10-30 23:02:59,782 INFO [Violoncello_20251030_004401_茉莉花-cello]        SystemManager.java:134  | Indentation detected for system #1
+2025-10-30 23:02:59,783 INFO [Violoncello_20251030_004401_茉莉花-cello]        SystemManager.java:779  | 1 part along 11 systems
+2025-10-30 23:02:59,783 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:545  | Created scores: [{Score 1}]
+2025-10-30 23:02:59,783 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | HEADERS
+2025-10-30 23:02:59,897 INFO [Violoncello_20251030_004401_茉莉花-cello]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-10-30 23:02:59,898 INFO [Violoncello_20251030_004401_茉莉花-cello]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Desktop/lxf/git/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-10-30 23:03:00,488 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | STEM_SEEDS
+2025-10-30 23:03:00,514 INFO [Violoncello_20251030_004401_茉莉花-cello]        StemSeedsStep.java:86   | stem(1 max:3)
+2025-10-30 23:03:00,541 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | BEAMS
+2025-10-30 23:03:02,267 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | LEDGERS
+2025-10-30 23:03:02,370 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | HEADS
+2025-10-30 23:03:04,465 INFO [Violoncello_20251030_004401_茉莉花-cello]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:0.5] NOTEHEAD_BLACK[L:0.5,R:0.5]}
+2025-10-30 23:03:04,465 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | STEMS
+2025-10-30 23:03:04,719 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | REDUCTION
+2025-10-30 23:03:04,776 INFO [Violoncello_20251030_004401_茉莉花-cello]        ReductionStep.java:105  | Stems free length median value: 63 pixels, 3.5 interlines
+2025-10-30 23:03:04,778 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | CUE_BEAMS
+2025-10-30 23:03:04,778 INFO [Violoncello_20251030_004401_茉莉花-cello]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-10-30 23:03:04,778 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | TEXTS
+2025-10-30 23:03:04,857 WARN [Violoncello_20251030_004401_茉莉花-cello]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-10-30 23:03:04,857 INFO [Violoncello_20251030_004401_茉莉花-cello]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-10-30 23:03:04,862 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | MEASURES
+2025-10-30 23:03:04,867 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Page.java:307  | 53 raw measures: [4 in system#1, 7 in system#2, 5 in system#3, 5 in system#4, 5 in system#5, 4 in system#6, 5 in system#7, 5 in system#8, 4 in system#9, 4 in system#10, 5 in system#11]
+2025-10-30 23:03:04,867 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | CHORDS
+2025-10-30 23:03:04,875 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | CURVES
+2025-10-30 23:03:05,397 INFO [Violoncello_20251030_004401_茉莉花-cello]         SlursBuilder.java:240  | Slurs: 64
+2025-10-30 23:03:05,407 INFO [Violoncello_20251030_004401_茉莉花-cello]      SegmentsBuilder.java:155  | Segments: 31
+2025-10-30 23:03:05,412 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | SYMBOLS
+2025-10-30 23:03:06,023 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | LINKS
+2025-10-30 23:03:06,041 INFO [Violoncello_20251030_004401_茉莉花-cello]        SymbolsLinker.java:287  | No chord above PedalInter#6638{(0.133) PEDAL_MARK}
+2025-10-30 23:03:06,041 INFO [Violoncello_20251030_004401_茉莉花-cello]        SymbolsLinker.java:287  | No chord above PedalInter#6741{(0.152) PEDAL_MARK}
+2025-10-30 23:03:06,046 INFO [Violoncello_20251030_004401_茉莉花-cello]        SymbolsLinker.java:287  | No chord above PedalInter#6998{(0.165) PEDAL_MARK}
+2025-10-30 23:03:06,055 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | RHYTHMS
+2025-10-30 23:03:06,081 INFO [Violoncello_20251030_004401_茉莉花-cello]                Voice.java:257  | Measure{#32} Voice{#1 excess:1/8} too long
+2025-10-30 23:03:06,081 INFO [Violoncello_20251030_004401_茉莉花-cello]          StackRhythm.java:224  | S7 MeasureStack#32 no correct rhythm
+2025-10-30 23:03:06,083 INFO [Violoncello_20251030_004401_茉莉花-cello]        MeasureRhythm.java:1045 | Measure{#35} No timeOffset for RestChordInter#7148{(0.797/0.797) staff:7 slot#5 dur:1/8}
+2025-10-30 23:03:06,083 INFO [Violoncello_20251030_004401_茉莉花-cello]          StackRhythm.java:224  | S7 MeasureStack#35 no correct rhythm
+2025-10-30 23:03:06,089 INFO [Violoncello_20251030_004401_茉莉花-cello]       StepMonitoring.java:98   | PAGE
+2025-10-30 23:03:06,092 INFO [Violoncello_20251030_004401_茉莉花-cello]                Voice.java:257  | Measure{#32} Voice{#1 excess:1/8} too long
+2025-10-30 23:03:06,093 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:2550 | Book{Violoncello_20251030_004401_茉莉花-cello} storing
+2025-10-30 23:03:06,121 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:2531 | Stored /book.xml
+2025-10-30 23:03:06,209 INFO [Violoncello_20251030_004401_茉莉花-cello]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-10-30 23:03:06,771 INFO [Violoncello_20251030_004401_茉莉花-cello]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-10-30 23:03:06,771 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:2491 | Book stored as data/output/Violoncello_20251030_004401_茉莉花-cello.omr
+2025-10-30 23:03:06,772 INFO [Violoncello_20251030_004401_茉莉花-cello]            SheetStub.java:1644 | Disposed sheet
+2025-10-30 23:03:06,801 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:2018 | End of Stub#1 memory: 38,301,720
+2025-10-30 23:03:06,802 INFO [Violoncello_20251030_004401_茉莉花-cello]                 Book.java:2025 | Book processed.
+2025-10-30 23:03:07,025 INFO [Violoncello_20251030_004401_茉莉花-cello]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-10-30 23:03:07,151 INFO [Violoncello_20251030_004401_茉莉花-cello]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1]
+2025-10-30 23:03:07,192 INFO [Violoncello_20251030_004401_茉莉花-cello]        ScoreExporter.java:164  | Score Violoncello_20251030_004401_茉莉花-cello exported to data/output/Violoncello_20251030_004401_茉莉花-cello.mxl
+2025-10-30 23:03:07,215 INFO [Violoncello_20251030_004401_茉莉花-cello]                Score.java:181  | Closing {Score 1}

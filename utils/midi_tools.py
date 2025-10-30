@@ -47,9 +47,20 @@ def musicxml_to_midi2(xml_path, midi_path, instrument_name=None):
         # 先尝试正常写入
         score.write('midi', fp=midi_path)
     except Exception as e:
-        if "badly formed repeats" in str(e):
-            print(f"⚠️ 检测到repeat标记问题，尝试移除repeat标记后重新转换...")
-            # 移除所有repeat相关的标记
+        if "badly formed repeats" in str(e) or "cannot expand Stream" in str(e) or "repeat" in str(e).lower():
+            print(f"⚠️ 检测到repeat标记问题，尝试处理repeat后重新转换...")
+
+            # 方法1: 尝试展开repeat
+            try:
+                expanded_score = score.expandRepeats()
+                expanded_score.write('midi', fp=midi_path)
+                print(f"✅ 转换完成（已展开repeat）")
+                return
+            except Exception as expand_e:
+                print(f"⚠️ 展开repeat失败: {expand_e}")
+
+            # 方法2: 移除所有repeat相关的标记
+            print(f"🔧 尝试移除repeat标记...")
             from music21 import repeat
             for part in score.parts:
                 # 移除repeat相关的元素
@@ -64,6 +75,7 @@ def musicxml_to_midi2(xml_path, midi_path, instrument_name=None):
                         pass
             # 重新尝试写入
             score.write('midi', fp=midi_path)
+            print(f"✅ 转换完成（已移除repeat标记）")
         else:
             # 如果不是repeat问题，重新抛出异常
             raise e
@@ -102,9 +114,44 @@ def merge_musicxml_to_midi(xml_paths, output_midi_path, instrument_name=None):
         except Exception as e:
             print(f"❌ 处理失败: {xml_path} - {e}")
 
-    # 写出为 MIDI
-    combined_score.write('midi', fp=output_midi_path)
-    print(f"✅ 合并完成，输出文件：{output_midi_path}")
+    # 写出为 MIDI，处理repeat相关的问题
+    try:
+        # 先尝试正常写入
+        combined_score.write('midi', fp=output_midi_path)
+        print(f"✅ 合并完成，输出文件：{output_midi_path}")
+    except Exception as e:
+        if "badly formed repeats" in str(e) or "cannot expand Stream" in str(e) or "repeat" in str(e).lower():
+            print(f"⚠️ 检测到repeat标记问题，尝试处理repeat后重新转换...")
+
+            # 方法1: 尝试展开repeat
+            try:
+                expanded_score = combined_score.expandRepeats()
+                expanded_score.write('midi', fp=output_midi_path)
+                print(f"✅ 合并完成（已展开repeat），输出文件：{output_midi_path}")
+                return
+            except Exception as expand_e:
+                print(f"⚠️ 展开repeat失败: {expand_e}")
+
+            # 方法2: 移除所有repeat相关的标记
+            print(f"🔧 尝试移除repeat标记...")
+            from music21 import repeat
+            for part in combined_score.parts:
+                # 移除repeat相关的元素
+                repeats_to_remove = []
+                for element in part.recurse():
+                    if hasattr(element, 'classes') and any('Repeat' in cls for cls in element.classes):
+                        repeats_to_remove.append(element)
+                for repeat_elem in repeats_to_remove:
+                    try:
+                        part.remove(repeat_elem, recurse=True)
+                    except:
+                        pass
+            # 重新尝试写入
+            combined_score.write('midi', fp=output_midi_path)
+            print(f"✅ 合并完成（已移除repeat标记），输出文件：{output_midi_path}")
+        else:
+            # 如果不是repeat问题，重新抛出异常
+            raise e
 
 
 def midi_to_mp3(midi_path, mp3_path, soundfont_path):

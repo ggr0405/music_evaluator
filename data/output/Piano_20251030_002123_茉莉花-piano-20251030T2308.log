@@ -1,0 +1,146 @@
+2025-10-30 23:08:11,473 INFO [Piano_20251030_002123_茉莉花-piano]                 Book.java:562  | 2 sheets in /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/茉莉花/Piano_20251030_002123_茉莉花-piano.pdf
+2025-10-30 23:08:11,540 INFO []                 Book.java:2531 | Stored /book.xml
+2025-10-30 23:08:11,540 INFO []                 Book.java:2491 | Book stored as data/output/Piano_20251030_002123_茉莉花-piano.omr
+2025-10-30 23:08:11,544 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1#2]
+2025-10-30 23:08:11,544 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | LOAD
+2025-10-30 23:08:11,763 INFO [Piano_20251030_002123_茉莉花-piano#1]            SheetStub.java:1268 | Loaded image #1 2479x3508 from /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/茉莉花/Piano_20251030_002123_茉莉花-piano.pdf
+2025-10-30 23:08:11,765 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | BINARY
+2025-10-30 23:08:12,048 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | SCALE
+2025-10-30 23:08:12,062 INFO [Piano_20251030_002123_茉莉花-piano#1]         ScaleBuilder.java:241  | Beam  guessed height:  9 -- 0.50 of 18 interline
+2025-10-30 23:08:12,063 INFO [Piano_20251030_002123_茉莉花-piano#1]         ScaleBuilder.java:264  | Beam measured height:  9 -- 0.31 of [5..18] range at 385% of needed quorum
+2025-10-30 23:08:12,063 INFO [Piano_20251030_002123_茉莉花-piano#1]            ScaleStep.java:65   | Scale{ interline(17,18,18) line(1,1,1) beam(9)}
+2025-10-30 23:08:12,063 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | GRID
+2025-10-30 23:08:12,296 INFO [Piano_20251030_002123_茉莉花-piano#1]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-10-30 23:08:12,313 INFO [Piano_20251030_002123_茉莉花-piano#1]    ClustersRetriever.java:328  | Retrieved raw line clusters: 10 of sizes [5] with interline(17,18,18)
+2025-10-30 23:08:12,371 INFO [Piano_20251030_002123_茉莉花-piano#1]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2025-10-30 23:08:12,504 INFO [Piano_20251030_002123_茉莉花-piano#1]        SystemManager.java:134  | Indentation detected for system #1
+2025-10-30 23:08:12,505 INFO [Piano_20251030_002123_茉莉花-piano#1]        SystemManager.java:779  | 1 part along 5 systems
+2025-10-30 23:08:12,505 INFO [Piano_20251030_002123_茉莉花-piano#1]                 Book.java:545  | Created scores: [{Score 1}]
+2025-10-30 23:08:12,505 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | HEADERS
+2025-10-30 23:08:12,612 INFO [Piano_20251030_002123_茉莉花-piano#1]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-10-30 23:08:12,613 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Desktop/lxf/git/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-10-30 23:08:12,890 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | STEM_SEEDS
+2025-10-30 23:08:12,918 INFO [Piano_20251030_002123_茉莉花-piano#1]        StemSeedsStep.java:86   | stem(1 max:3)
+2025-10-30 23:08:12,939 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | BEAMS
+2025-10-30 23:08:14,983 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | LEDGERS
+2025-10-30 23:08:15,223 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | HEADS
+2025-10-30 23:08:17,033 INFO [Piano_20251030_002123_茉莉花-piano#1]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:0.5,R:0.5] NOTEHEAD_BLACK[L:0.3,R:0.5]}
+2025-10-30 23:08:17,035 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | STEMS
+2025-10-30 23:08:17,378 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | REDUCTION
+2025-10-30 23:08:17,482 INFO [Piano_20251030_002123_茉莉花-piano#1]        ReductionStep.java:105  | Stems free length median value: 67 pixels, 3.7 interlines
+2025-10-30 23:08:17,484 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | CUE_BEAMS
+2025-10-30 23:08:17,485 INFO [Piano_20251030_002123_茉莉花-piano#1]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-10-30 23:08:17,485 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | TEXTS
+2025-10-30 23:08:17,567 WARN [Piano_20251030_002123_茉莉花-piano#1]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-10-30 23:08:17,567 INFO [Piano_20251030_002123_茉莉花-piano#1]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-10-30 23:08:17,571 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | MEASURES
+2025-10-30 23:08:17,575 INFO [Piano_20251030_002123_茉莉花-piano#1]                 Page.java:307  | 22 raw measures: [4 in system#1, 4 in system#2, 5 in system#3, 5 in system#4, 4 in system#5]
+2025-10-30 23:08:17,575 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | CHORDS
+2025-10-30 23:08:17,582 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | CURVES
+2025-10-30 23:08:18,041 INFO [Piano_20251030_002123_茉莉花-piano#1]         SlursBuilder.java:240  | Slurs: 17
+2025-10-30 23:08:18,050 INFO [Piano_20251030_002123_茉莉花-piano#1]      SegmentsBuilder.java:155  | Segments: 3
+2025-10-30 23:08:18,053 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | SYMBOLS
+2025-10-30 23:08:18,352 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | LINKS
+2025-10-30 23:08:18,353 INFO [Piano_20251030_002123_茉莉花-piano#1]        SymbolsLinker.java:257  | No chord linked to OctaveShiftInter#5882{(0.268) staff:2 OTTAVA BASSA}
+2025-10-30 23:08:18,360 INFO [Piano_20251030_002123_茉莉花-piano#1]        SymbolsLinker.java:257  | No chord linked to OctaveShiftInter#5960{(0.268) staff:3 OTTAVA ALTA}
+2025-10-30 23:08:18,364 INFO [Piano_20251030_002123_茉莉花-piano#1]        SymbolsLinker.java:287  | No chord above PedalInter#6043{(0.133) PEDAL_MARK}
+2025-10-30 23:08:18,376 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | RHYTHMS
+2025-10-30 23:08:18,396 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#14} No timeOffset for RestChordInter#6114{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,396 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#14} No timeOffset for RestChordInter#6114{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,396 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S4 MeasureStack#14 no correct rhythm
+2025-10-30 23:08:18,397 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#15} No timeOffset for RestChordInter#6116{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,397 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#15} No timeOffset for RestChordInter#6116{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,397 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S4 MeasureStack#15 no correct rhythm
+2025-10-30 23:08:18,398 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#16} No timeOffset for RestChordInter#6118{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,398 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#16} No timeOffset for RestChordInter#6118{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,398 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S4 MeasureStack#16 no correct rhythm
+2025-10-30 23:08:18,398 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#17} No timeOffset for RestChordInter#6120{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,398 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#17} No timeOffset for RestChordInter#6120{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,399 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S4 MeasureStack#17 no correct rhythm
+2025-10-30 23:08:18,399 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#18} No timeOffset for RestChordInter#6122{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,399 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#18} No timeOffset for RestChordInter#6122{(0.788/0.788) staff:8 slot#4 dur:1/4}
+2025-10-30 23:08:18,399 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S4 MeasureStack#18 no correct rhythm
+2025-10-30 23:08:18,400 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#19} No timeOffset for RestChordInter#6158{(0.790/0.790) staff:10 slot#4 dur:1/4}
+2025-10-30 23:08:18,400 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#19} No timeOffset for RestChordInter#6158{(0.790/0.790) staff:10 slot#4 dur:1/4}
+2025-10-30 23:08:18,400 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S5 MeasureStack#19 no correct rhythm
+2025-10-30 23:08:18,401 INFO [Piano_20251030_002123_茉莉花-piano#1]        MeasureRhythm.java:1045 | Measure{#20} No timeOffset for RestChordInter#6160{(0.791/0.791) staff:10 slot#4 dur:1/4}
+2025-10-30 23:08:18,401 INFO [Piano_20251030_002123_茉莉花-piano#1]   AbstractChordInter.java:627  | Measure{#20} No timeOffset for RestChordInter#6160{(0.791/0.791) staff:10 slot#4 dur:1/4}
+2025-10-30 23:08:18,401 INFO [Piano_20251030_002123_茉莉花-piano#1]          StackRhythm.java:224  | S5 MeasureStack#20 no correct rhythm
+2025-10-30 23:08:18,404 INFO [Piano_20251030_002123_茉莉花-piano#1]       StepMonitoring.java:98   | PAGE
+2025-10-30 23:08:18,406 INFO [Piano_20251030_002123_茉莉花-piano#1]                 Book.java:2550 | Book{Piano_20251030_002123_茉莉花-piano} storing
+2025-10-30 23:08:18,437 INFO [Piano_20251030_002123_茉莉花-piano#1]                 Book.java:2531 | Stored /book.xml
+2025-10-30 23:08:18,523 INFO [Piano_20251030_002123_茉莉花-piano#1]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-10-30 23:08:19,063 INFO [Piano_20251030_002123_茉莉花-piano#1]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-10-30 23:08:19,063 INFO [Piano_20251030_002123_茉莉花-piano#1]                 Book.java:2491 | Book stored as data/output/Piano_20251030_002123_茉莉花-piano.omr
+2025-10-30 23:08:19,064 INFO [Piano_20251030_002123_茉莉花-piano#1]            SheetStub.java:1644 | Disposed sheet#1
+2025-10-30 23:08:19,093 INFO [Piano_20251030_002123_茉莉花-piano#1]                 Book.java:2018 | End of Stub#1 memory: 38,417,184
+2025-10-30 23:08:19,093 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | LOAD
+2025-10-30 23:08:19,117 INFO [Piano_20251030_002123_茉莉花-piano#2]            SheetStub.java:1268 | Loaded image #2 2479x3508 from /Users/amber/Desktop/lxf/git/music_evaluator/data/sheet_music/茉莉花/Piano_20251030_002123_茉莉花-piano.pdf
+2025-10-30 23:08:19,118 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | BINARY
+2025-10-30 23:08:19,310 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | SCALE
+2025-10-30 23:08:19,328 INFO [Piano_20251030_002123_茉莉花-piano#2]         ScaleBuilder.java:241  | Beam  guessed height:  9 -- 0.50 of 18 interline
+2025-10-30 23:08:19,328 INFO [Piano_20251030_002123_茉莉花-piano#2]         ScaleBuilder.java:264  | Beam measured height:  9 -- 0.31 of [5..18] range at 1001% of needed quorum
+2025-10-30 23:08:19,328 INFO [Piano_20251030_002123_茉莉花-piano#2]            ScaleStep.java:65   | Scale{ interline(17,18,18) line(1,1,1) beam(9)}
+2025-10-30 23:08:19,328 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | GRID
+2025-10-30 23:08:19,432 INFO [Piano_20251030_002123_茉莉花-piano#2]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-10-30 23:08:19,444 INFO [Piano_20251030_002123_茉莉花-piano#2]    ClustersRetriever.java:328  | Retrieved raw line clusters: 12 of sizes [5] with interline(17,18,18)
+2025-10-30 23:08:19,515 INFO [Piano_20251030_002123_茉莉花-piano#2]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10] #6[11, 12]
+2025-10-30 23:08:19,592 INFO [Piano_20251030_002123_茉莉花-piano#2]        SystemManager.java:779  | 1 part along 6 systems
+2025-10-30 23:08:19,593 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | HEADERS
+2025-10-30 23:08:19,646 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | STEM_SEEDS
+2025-10-30 23:08:19,664 INFO [Piano_20251030_002123_茉莉花-piano#2]        StemSeedsStep.java:86   | stem(1 max:2)
+2025-10-30 23:08:19,676 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | BEAMS
+2025-10-30 23:08:21,240 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | LEDGERS
+2025-10-30 23:08:21,379 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | HEADS
+2025-10-30 23:08:23,432 INFO [Piano_20251030_002123_茉莉花-piano#2]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:0.5,R:0.4] NOTEHEAD_BLACK[L:0.5,R:0.5]}
+2025-10-30 23:08:23,432 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | STEMS
+2025-10-30 23:08:23,517 INFO [Piano_20251030_002123_茉莉花-piano#2]           BeamLinker.java:1729 | Not linking shorter BeamInter#1408{(0.682) BEAM}
+2025-10-30 23:08:23,518 INFO [Piano_20251030_002123_茉莉花-piano#2]           BeamLinker.java:1729 | Not linking shorter BeamInter#1414{(0.679) BEAM}
+2025-10-30 23:08:23,687 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | REDUCTION
+2025-10-30 23:08:23,721 INFO [Piano_20251030_002123_茉莉花-piano#2]        ReductionStep.java:105  | Stems free length median value: 65 pixels, 3.6 interlines
+2025-10-30 23:08:23,722 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | CUE_BEAMS
+2025-10-30 23:08:23,723 INFO [Piano_20251030_002123_茉莉花-piano#2]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-10-30 23:08:23,723 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | TEXTS
+2025-10-30 23:08:23,779 WARN [Piano_20251030_002123_茉莉花-piano#2]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-10-30 23:08:23,779 INFO [Piano_20251030_002123_茉莉花-piano#2]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-10-30 23:08:23,780 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | MEASURES
+2025-10-30 23:08:23,781 INFO [Piano_20251030_002123_茉莉花-piano#2]                 Page.java:307  | 18 raw measures: [2 in system#1, 3 in system#2, 3 in system#3, 3 in system#4, 3 in system#5, 4 in system#6]
+2025-10-30 23:08:23,781 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | CHORDS
+2025-10-30 23:08:23,784 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | CURVES
+2025-10-30 23:08:24,102 INFO [Piano_20251030_002123_茉莉花-piano#2]         SlursBuilder.java:240  | Slurs: 0
+2025-10-30 23:08:24,114 INFO [Piano_20251030_002123_茉莉花-piano#2]      SegmentsBuilder.java:155  | Segments: 6
+2025-10-30 23:08:24,115 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | SYMBOLS
+2025-10-30 23:08:24,328 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | LINKS
+2025-10-30 23:08:24,344 INFO [Piano_20251030_002123_茉莉花-piano#2]        SymbolsLinker.java:287  | No chord above PedalInter#6319{(0.167) PEDAL_MARK}
+2025-10-30 23:08:24,356 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | RHYTHMS
+2025-10-30 23:08:24,356 INFO [Piano_20251030_002123_茉莉花-piano#2]           PageRhythm.java:199  | {Page#2.1} Time value reused from sheet#1
+2025-10-30 23:08:24,360 INFO [Piano_20251030_002123_茉莉花-piano#2]                Voice.java:257  | Measure{#1} Voice{#5 excess:1/8} too long
+2025-10-30 23:08:24,360 INFO [Piano_20251030_002123_茉莉花-piano#2]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2025-10-30 23:08:24,367 INFO [Piano_20251030_002123_茉莉花-piano#2]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2025-10-30 23:08:24,368 INFO [Piano_20251030_002123_茉莉花-piano#2]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2025-10-30 23:08:24,370 INFO [Piano_20251030_002123_茉莉花-piano#2]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/4} too long
+2025-10-30 23:08:24,370 INFO [Piano_20251030_002123_茉莉花-piano#2]          StackRhythm.java:224  | S2 MeasureStack#3 no correct rhythm
+2025-10-30 23:08:24,387 INFO [Piano_20251030_002123_茉莉花-piano#2]        MeasureRhythm.java:1045 | Measure{#16} No timeOffset for RestChordInter#6421{(0.643/0.643) staff:12 slot#4 dur:1/8}
+2025-10-30 23:08:24,387 INFO [Piano_20251030_002123_茉莉花-piano#2]          StackRhythm.java:224  | S6 MeasureStack#16 no correct rhythm
+2025-10-30 23:08:24,388 INFO [Piano_20251030_002123_茉莉花-piano#2]        MeasureRhythm.java:1045 | Measure{#17} No timeOffset for HeadChordInter#5776{(0.644/0.823) staff:11 slot#2 dur:1}
+2025-10-30 23:08:24,388 INFO [Piano_20251030_002123_茉莉花-piano#2]        MeasureRhythm.java:1045 | Measure{#17} No timeOffset for HeadChordInter#5777{(0.638/0.638) staff:11 slot#2 dur:1}
+2025-10-30 23:08:24,388 INFO [Piano_20251030_002123_茉莉花-piano#2]        MeasureRhythm.java:1045 | Measure{#17} No timeOffset for HeadChordInter#5778{(0.642/0.642) staff:11 slot#2 dur:1}
+2025-10-30 23:08:24,388 INFO [Piano_20251030_002123_茉莉花-piano#2]        MeasureRhythm.java:1045 | Measure{#17} No timeOffset for HeadChordInter#5779{(0.676/0.676) staff:11 slot#2 dur:1}
+2025-10-30 23:08:24,388 INFO [Piano_20251030_002123_茉莉花-piano#2]          StackRhythm.java:224  | S6 MeasureStack#17 no correct rhythm
+2025-10-30 23:08:24,388 INFO [Piano_20251030_002123_茉莉花-piano#2]       StepMonitoring.java:98   | PAGE
+2025-10-30 23:08:24,389 INFO [Piano_20251030_002123_茉莉花-piano#2]                Voice.java:257  | Measure{#1} Voice{#5 excess:1/8} too long
+2025-10-30 23:08:24,389 INFO [Piano_20251030_002123_茉莉花-piano#2]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2025-10-30 23:08:24,389 INFO [Piano_20251030_002123_茉莉花-piano#2]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/4} too long
+2025-10-30 23:08:24,389 INFO [Piano_20251030_002123_茉莉花-piano#2]                 Book.java:2550 | Book{Piano_20251030_002123_茉莉花-piano} storing
+2025-10-30 23:08:24,419 INFO [Piano_20251030_002123_茉莉花-piano#2]                 Book.java:2531 | Stored /book.xml
+2025-10-30 23:08:24,490 INFO [Piano_20251030_002123_茉莉花-piano#2]           DataHolder.java:348  | Stored /sheet#2/BINARY.png
+2025-10-30 23:08:24,973 INFO [Piano_20251030_002123_茉莉花-piano#2]                Sheet.java:1561 | Stored /sheet#2/sheet#2.xml
+2025-10-30 23:08:24,974 INFO [Piano_20251030_002123_茉莉花-piano#2]                 Book.java:2491 | Book stored as data/output/Piano_20251030_002123_茉莉花-piano.omr
+2025-10-30 23:08:24,975 INFO [Piano_20251030_002123_茉莉花-piano#2]            SheetStub.java:1644 | Disposed sheet#2
+2025-10-30 23:08:25,003 INFO [Piano_20251030_002123_茉莉花-piano#2]                 Book.java:2018 | End of Stub#2 memory: 38,467,840
+2025-10-30 23:08:25,003 INFO [Piano_20251030_002123_茉莉花-piano]                 Book.java:2025 | Book processed.
+2025-10-30 23:08:25,195 INFO [Piano_20251030_002123_茉莉花-piano]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-10-30 23:08:25,383 INFO [Piano_20251030_002123_茉莉花-piano]            SheetStub.java:995  | Loaded /sheet#2/sheet#2.xml
+2025-10-30 23:08:25,509 INFO [Piano_20251030_002123_茉莉花-piano]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1#2]
+2025-10-30 23:08:25,566 INFO [Piano_20251030_002123_茉莉花-piano]        ScoreExporter.java:164  | Score Piano_20251030_002123_茉莉花-piano exported to data/output/Piano_20251030_002123_茉莉花-piano.mxl
+2025-10-30 23:08:25,591 INFO [Piano_20251030_002123_茉莉花-piano]                Score.java:181  | Closing {Score 1}
