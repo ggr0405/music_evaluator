@@ -166,6 +166,7 @@ def perform_scoring(db, song_name: str, instrument: str, user_audio_path: str, r
             rhythm_score=result['rhythm_score'],
             pitch_error=result['pitch_error'],
             rhythm_error=result['rhythm_error'],
+            rhythm_stability_error=result.get('rhythm_stability_error', 0),
             suggestions="; ".join(result['suggestions']),
             chart_path=result.get('chart', ''),
             reference_audio_path=reference_audio_path
@@ -245,6 +246,7 @@ def perform_scoring_with_selected_solo(db, selected_solo, user_audio_path: str, 
             rhythm_score=result['rhythm_score'],
             pitch_error=result['pitch_error'],
             rhythm_error=result['rhythm_error'],
+            rhythm_stability_error=result.get('rhythm_stability_error', 0),
             suggestions="; ".join(result['suggestions']),
             chart_path=result.get('chart', ''),
             reference_audio_path=reference_audio_path
@@ -460,6 +462,7 @@ def render_recording_item(recording):
                         'rhythm_score': latest_score.rhythm_score,
                         'pitch_error': latest_score.pitch_error,
                         'rhythm_error': latest_score.rhythm_error,
+                        'rhythm_stability_error': getattr(latest_score, 'rhythm_stability_error', None),
                         'suggestions': latest_score.suggestions,
                         'chart_path': latest_score.chart_path,
                         'reference_audio_path': latest_score.reference_audio_path,
@@ -519,9 +522,13 @@ def render_recording_item(recording):
             with score_col2:
                 st.metric("节奏评分", f"{score_data['rhythm_score']}")
             with score_col3:
-                st.metric("音准误差", f"{score_data['pitch_error']}")
+                st.metric("音准误差", f"{score_data['pitch_error']} Hz")
             with score_col4:
-                st.metric("节奏误差", f"{score_data['rhythm_error']}")
+                # 显示整体速度误差，如果有的话
+                if 'rhythm_stability_error' in score_data:
+                    st.metric("节奏稳定性", f"{score_data.get('rhythm_stability_error', 0):.3f}s")
+                else:
+                    st.metric("节奏误差", f"{score_data['rhythm_error']}")
 
             # 评语建议
             if score_data['suggestions']:
@@ -543,11 +550,24 @@ def render_recording_item(recording):
                 # 评分说明
                 st.markdown("""
                 ### 📋 评分说明
-                - **综合评分**（0~100）：综合考虑音准和节奏表现，**音准占比 80%，节奏占比 20%**
+
+                #### 综合评分（0~100）
+                - 综合考虑音准和节奏表现
+                - **音准占比 80%，节奏占比 20%**
+
+                #### 音准分析
                 - **音准误差**（Hz）：基频的平均差异，越低越好，表示音高更准确
-                - **音准评分**（0~100）：根据基频误差计算的分数，越高表示音准越准确
-                - **节奏误差**（秒）：演奏节奏与参考节奏的时间差标准差，越低越好
-                - **节奏评分**（0~100）：根据节奏误差计算的分数，越高表示节奏越精准
+                - **音准评分**（0~100）：根据基频误差计算，越高表示音准越准确
+
+                #### 节奏分析（基于Onset检测）
+                - **整体速度误差**（秒）：演奏速度与参考速度的平均时间差，反映整体快慢
+                - **节奏稳定性误差**（秒）：去除整体偏移后的波动，反映节奏是否稳定
+                - **节奏评分**（0~100）：综合速度和稳定性，**速度40% + 稳定性60%**
+
+                #### 评分改进说明
+                - 新版节奏评分使用Onset（起音点）检测，更准确地反映节奏差异
+                - 区分整体快慢和节奏稳定性两个维度，评分更合理
+                - 即使演奏整体偏快/偏慢，只要节奏稳定，也能获得较高分数
                 """)
         else:
             st.warning("⚠️ 暂无评分结果")

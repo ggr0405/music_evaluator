@@ -1,0 +1,57 @@
+2025-11-03 23:43:59,609 INFO [temp_茉莉花-clarinetti]                 Book.java:562  | 1 sheet in /Users/amber/Desktop/lxf/git/music_evaluator/tmp/uploads/temp_茉莉花-clarinetti.pdf
+2025-11-03 23:43:59,691 INFO []                 Book.java:2531 | Stored /book.xml
+2025-11-03 23:43:59,691 INFO []                 Book.java:2491 | Book stored as tmp/output/temp_茉莉花-clarinetti.omr
+2025-11-03 23:43:59,696 INFO []                 Book.java:1933 | Book reaching PAGE on sheets:[#1]
+2025-11-03 23:43:59,697 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | LOAD
+2025-11-03 23:43:59,883 INFO [temp_茉莉花-clarinetti]            SheetStub.java:1268 | Loaded image #1 2479x3508 from /Users/amber/Desktop/lxf/git/music_evaluator/tmp/uploads/temp_茉莉花-clarinetti.pdf
+2025-11-03 23:43:59,885 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | BINARY
+2025-11-03 23:44:00,131 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | SCALE
+2025-11-03 23:44:00,147 INFO [temp_茉莉花-clarinetti]         ScaleBuilder.java:241  | Beam  guessed height:  9 -- 0.50 of 18 interline
+2025-11-03 23:44:00,148 INFO [temp_茉莉花-clarinetti]         ScaleBuilder.java:264  | Beam measured height:  9 -- 0.31 of [5..18] range at 591% of needed quorum
+2025-11-03 23:44:00,148 INFO [temp_茉莉花-clarinetti]            ScaleStep.java:65   | Scale{ interline(17,18,18) line(1,1,2) beam(9)}
+2025-11-03 23:44:00,148 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | GRID
+2025-11-03 23:44:00,426 INFO [temp_茉莉花-clarinetti]       LinesRetriever.java:1500 | Global slope: 0.00000
+2025-11-03 23:44:00,447 INFO [temp_茉莉花-clarinetti]    ClustersRetriever.java:328  | Retrieved raw line clusters: 10 of sizes [5] with interline(17,18,18)
+2025-11-03 23:44:00,592 INFO [temp_茉莉花-clarinetti]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6] #7[7] #8[8] #9[9] #10[10]
+2025-11-03 23:44:00,764 INFO [temp_茉莉花-clarinetti]        SystemManager.java:134  | Indentation detected for system #1
+2025-11-03 23:44:00,765 INFO [temp_茉莉花-clarinetti]        SystemManager.java:779  | 1 part along 10 systems
+2025-11-03 23:44:00,765 INFO [temp_茉莉花-clarinetti]                 Book.java:545  | Created scores: [{Score 1}]
+2025-11-03 23:44:00,765 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | HEADERS
+2025-11-03 23:44:00,873 INFO [temp_茉莉花-clarinetti]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2025-11-03 23:44:00,874 INFO [temp_茉莉花-clarinetti]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/Users/amber/Desktop/lxf/git/music_evaluator/Audiveris/app/lib/audiveris.jar!/res/basic-classifier.zip
+2025-11-03 23:44:01,163 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | STEM_SEEDS
+2025-11-03 23:44:01,186 INFO [temp_茉莉花-clarinetti]        StemSeedsStep.java:86   | stem(1 max:3)
+2025-11-03 23:44:01,207 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | BEAMS
+2025-11-03 23:44:02,898 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | LEDGERS
+2025-11-03 23:44:03,015 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | HEADS
+2025-11-03 23:44:05,227 INFO [temp_茉莉花-clarinetti]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:0.5,R:0.5] NOTEHEAD_BLACK[L:0.2,R:0.5]}
+2025-11-03 23:44:05,227 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | STEMS
+2025-11-03 23:44:05,578 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | REDUCTION
+2025-11-03 23:44:05,643 INFO [temp_茉莉花-clarinetti]        ReductionStep.java:105  | Stems free length median value: 65 pixels, 3.6 interlines
+2025-11-03 23:44:05,645 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | CUE_BEAMS
+2025-11-03 23:44:05,646 INFO [temp_茉莉花-clarinetti]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2025-11-03 23:44:05,646 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | TEXTS
+2025-11-03 23:44:05,736 WARN [temp_茉莉花-clarinetti]         TesseractOCR.java:335  | The collection of supported languages is empty
+2025-11-03 23:44:05,736 INFO [temp_茉莉花-clarinetti]              OcrUtil.java:107  | Missing support for 'eng' language(s)
+2025-11-03 23:44:05,741 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | MEASURES
+2025-11-03 23:44:05,746 INFO [temp_茉莉花-clarinetti]                 Page.java:307  | 52 raw measures: [4 in system#1, 4 in system#2, 8 in system#3, 7 in system#4, 3 in system#5, 3 in system#6, 3 in system#7, 6 in system#8, 6 in system#9, 8 in system#10]
+2025-11-03 23:44:05,746 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | CHORDS
+2025-11-03 23:44:05,754 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | CURVES
+2025-11-03 23:44:06,347 INFO [temp_茉莉花-clarinetti]         SlursBuilder.java:240  | Slurs: 67
+2025-11-03 23:44:06,355 INFO [temp_茉莉花-clarinetti]      SegmentsBuilder.java:155  | Segments: 22
+2025-11-03 23:44:06,359 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | SYMBOLS
+2025-11-03 23:44:06,713 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | LINKS
+2025-11-03 23:44:06,745 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | RHYTHMS
+2025-11-03 23:44:06,773 INFO [temp_茉莉花-clarinetti]       StepMonitoring.java:98   | PAGE
+2025-11-03 23:44:06,776 INFO [temp_茉莉花-clarinetti]                 Book.java:2550 | Book{temp_茉莉花-clarinetti} storing
+2025-11-03 23:44:06,809 INFO [temp_茉莉花-clarinetti]                 Book.java:2531 | Stored /book.xml
+2025-11-03 23:44:06,900 INFO [temp_茉莉花-clarinetti]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2025-11-03 23:44:07,542 INFO [temp_茉莉花-clarinetti]                Sheet.java:1561 | Stored /sheet#1/sheet#1.xml
+2025-11-03 23:44:07,543 INFO [temp_茉莉花-clarinetti]                 Book.java:2491 | Book stored as tmp/output/temp_茉莉花-clarinetti.omr
+2025-11-03 23:44:07,544 INFO [temp_茉莉花-clarinetti]            SheetStub.java:1644 | Disposed sheet
+2025-11-03 23:44:07,572 INFO [temp_茉莉花-clarinetti]                 Book.java:2018 | End of Stub#1 memory: 38,324,696
+2025-11-03 23:44:07,573 INFO [temp_茉莉花-clarinetti]                 Book.java:2025 | Book processed.
+2025-11-03 23:44:07,880 INFO [temp_茉莉花-clarinetti]            SheetStub.java:995  | Loaded /sheet#1/sheet#1.xml
+2025-11-03 23:44:08,014 INFO [temp_茉莉花-clarinetti]      PartwiseBuilder.java:2661 | Exporting sheet(s): [#1]
+2025-11-03 23:44:08,060 INFO [temp_茉莉花-clarinetti]        ScoreExporter.java:164  | Score temp_茉莉花-clarinetti exported to tmp/output/temp_茉莉花-clarinetti.mxl
+2025-11-03 23:44:08,077 INFO [temp_茉莉花-clarinetti]                Score.java:181  | Closing {Score 1}

@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1.6">
+    <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1.7">
+      <change afterPath="$PROJECT_DIR$/test2/Clarinet_20251030_014218_茉莉花-clarinetti-quickly.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test2/Clarinet_20251030_014218_茉莉花-clarinetti-slow.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test2/标准音频_t1_Clarinet.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/music_evaluator.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/midi_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/midi_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/compare_audio2.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/compare_audio2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/recording_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/recording_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +48,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/amber/Desktop/lxf/git/music_evaluator/test-files"
+    "last_opened_file_path": "/Users/amber/Desktop/lxf/git/music_evaluator/test2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test2" />
       <recent name="$PROJECT_DIR$/test-files" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
@@ -319,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761756325557</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="1.7">
+      <option name="closed" value="true" />
+      <created>1761836993697</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1761836993697</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -332,6 +347,7 @@
     <MESSAGE value="1.4" />
     <MESSAGE value="1.5" />
     <MESSAGE value="1.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.6" />
+    <MESSAGE value="1.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.7" />
   </component>
 </project>

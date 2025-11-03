@@ -129,6 +129,7 @@ class PerformanceScore(Base):
     rhythm_score = Column(Integer)
     pitch_error = Column(Float)
     rhythm_error = Column(Float)
+    rhythm_stability_error = Column(Float)  # 节奏稳定性误差
     suggestions = Column(JSON)  # 存储建议列表
     segment_scores = Column(JSON)  # 存储分段评分数据
     chart_path = Column(String(500))

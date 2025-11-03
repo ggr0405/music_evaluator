@@ -6,6 +6,58 @@ from scipy.spatial.distance import euclidean as norm
 from fastdtw import fastdtw
 import os
 
+
+def calculate_rhythm_score(y_ref, sr_ref, y_user, sr_user):
+    """
+    改进的节奏评分算法：使用onset间隔比率评分
+
+    返回:
+        rhythm_score: 综合节奏评分 (0-100)
+        tempo_error: 整体速度误差（比例）
+        stability_error: 节奏稳定性误差（标准差）
+    """
+    # 1. Onset检测（检测音符开始时间点）
+    ref_onsets = librosa.onset.onset_detect(y=y_ref, sr=sr_ref, units='time')
+    user_onsets = librosa.onset.onset_detect(y=y_user, sr=sr_user, units='time')
+
+    # 2. 检查onset数量
+    if len(ref_onsets) < 3 or len(user_onsets) < 3:
+        return 50.0, 0.0, 0.0
+
+    # 3. 计算onset间隔（相邻onset之间的时间间隔）
+    ref_intervals = np.diff(ref_onsets)
+    user_intervals = np.diff(user_onsets)
+
+    # 4. 对齐间隔（使用最短长度）
+    min_len = min(len(ref_intervals), len(user_intervals))
+
+    # 计算间隔比率（用户/参考）
+    interval_ratios = user_intervals[:min_len] / (ref_intervals[:min_len] + 1e-10)
+
+    # 5. 计算两个独立指标
+    # 指标A: 整体速度比例（间隔比率的中位数）
+    median_ratio = np.median(interval_ratios)
+
+    # 速度误差：与1.0的偏离程度
+    tempo_error = abs(median_ratio - 1.0)
+
+    # 指标B: 节奏稳定性（间隔比率的标准差）
+    stability_error = np.std(interval_ratios)
+
+    # 6. 分别计算评分
+    # 整体速度误差：容忍度较高
+    # 比例1.0→100分，比例偏离0.5→0分（即0.5倍速或2倍速时为0分）
+    tempo_score = max(0, min(100, 100 - tempo_error * 200))
+
+    # 节奏稳定性：要求较严格
+    # std=0→100分，std=0.5→0分
+    stability_score = max(0, min(100, 100 - stability_error * 200))
+
+    # 7. 综合评分（速度40% + 稳定性60%）
+    rhythm_score = tempo_score * 0.4 + stability_score * 0.6
+
+    return rhythm_score, tempo_error, stability_error
+
 def compare_audio2(ref_path, user_path, unique_id=None):
     # 固定采样率加载
     sr_target = 16000
@@ -40,14 +92,12 @@ def compare_audio2(ref_path, user_path, unique_id=None):
 
     pitch_error = np.mean(np.abs(f0_ref_aligned - f0_user_aligned)) if len(f0_ref_aligned) > 0 else 0
 
-    # 节奏误差（秒）
-    ref_times = librosa.frames_to_time([i for i, j in alignment], sr=sr_ref)
-    user_times = librosa.frames_to_time([j for i, j in alignment], sr=sr_user)
-    time_diffs = user_times - ref_times
-    rhythm_error = np.std(time_diffs) if len(time_diffs) > 1 else 0
+    # 节奏误差 - 使用onset检测+双指标评分
+    rhythm_score, tempo_error, stability_error = calculate_rhythm_score(
+        y_ref, sr_ref, y_user, sr_user
+    )
 
     # 评分计算
-    rhythm_score = max(0, 100 - rhythm_error * 100)
     pitch_score = max(0, 100 - pitch_error / 2)
     overall_score = round(pitch_score * 0.8 + rhythm_score * 0.2)
 
@@ -85,12 +135,28 @@ def compare_audio2(ref_path, user_path, unique_id=None):
             pitch_seg_score = 0
         pitch_segment_scores_f0.append(pitch_seg_score)
 
-        # 节奏分段评分：时间差标准差转分数
+        # 节奏分段评分：使用onset检测（每个segment对应的时间范围）
         seg_ref_times = librosa.frames_to_time([idx_ref for idx_ref, _ in segment], sr=sr_ref)
         seg_user_times = librosa.frames_to_time([idx_user for _, idx_user in segment], sr=sr_user)
-        seg_time_diffs = seg_user_times - seg_ref_times
-        seg_rhythm_err = np.std(seg_time_diffs) if len(seg_time_diffs) > 1 else 0
-        rhythm_seg_score = max(0, 100 - seg_rhythm_err * 100)
+
+        if len(seg_ref_times) > 0 and len(seg_user_times) > 0:
+            seg_time_range_ref = (seg_ref_times[0], seg_ref_times[-1])
+            seg_time_range_user = (seg_user_times[0], seg_user_times[-1])
+
+            # 简化：使用时间范围长度比较作为节奏指标
+            ref_duration = seg_time_range_ref[1] - seg_time_range_ref[0]
+            user_duration = seg_time_range_user[1] - seg_time_range_user[0]
+
+            if ref_duration > 0:
+                duration_ratio = user_duration / ref_duration
+                # 比例1.0为完美，偏离越大分数越低
+                seg_rhythm_err = abs(duration_ratio - 1.0)
+                rhythm_seg_score = max(0, 100 - seg_rhythm_err * 100)
+            else:
+                rhythm_seg_score = 50
+        else:
+            rhythm_seg_score = 50
+
         rhythm_segment_scores.append(rhythm_seg_score)
 
     # 绘图
@@ -99,7 +165,8 @@ def compare_audio2(ref_path, user_path, unique_id=None):
     return {
         "score": overall_score,
         "pitch_error": round(pitch_error, 2),
-        "rhythm_error": round(rhythm_error, 4),
+        "rhythm_error": round(tempo_error, 4),
+        "rhythm_stability_error": round(stability_error, 4),
         "rhythm_score": round(rhythm_score),
         "pitch_score": round(pitch_score),
         "suggestions": suggestions,
@@ -159,11 +226,15 @@ if __name__ == "__main__":
 
     result = compare_audio2(ref_path, user_path)
 
-    print(f"综合评分: {result['score']}（范围0~100，越高越好，综合考虑音准和节奏）")
-    print(f"音准误差: {result['pitch_error']} Hz（平均基频差，越低越好）")
-    print(f"节奏误差: {result['rhythm_error']} 秒（时间差标准差，越低越好）")
-    print(f"节奏评分: {result['rhythm_score']}（范围0~100，越高越好，基于节奏误差计算）")
-    print("建议:")
+    print(f"综合评分: {result['score']}（范围0~100，越高越好，音准80% + 节奏20%）")
+    print(f"\n【音准分析】")
+    print(f"  音准误差: {result['pitch_error']} Hz（平均基频差，越低越好）")
+    print(f"  音准评分: {result['pitch_score']}（范围0~100）")
+    print(f"\n【节奏分析】")
+    print(f"  整体速度误差: {result['rhythm_error']} 秒（onset时间差，越低越好）")
+    print(f"  节奏稳定性误差: {result['rhythm_stability_error']} 秒（去均值后的波动，越低越好）")
+    print(f"  节奏评分: {result['rhythm_score']}（范围0~100，速度40% + 稳定性60%）")
+    print(f"\n【改进建议】")
     for s in result['suggestions']:
-        print(f" - {s}")
-    print("分段评分图已保存至：", result["chart"])
+        print(f"  - {s}")
+    print(f"\n分段评分图已保存至：{result['chart']}")
