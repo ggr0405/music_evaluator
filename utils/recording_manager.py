@@ -500,10 +500,55 @@ def render_recording_item(recording):
         with col3:
             if st.button("✏️", key=f"edit_recording_{recording.id}", help="编辑"):
                 st.session_state.edit_recording = recording.id
+                st.rerun()
 
         with col4:
             if st.button("🗑️", key=f"delete_recording_{recording.id}", help="删除"):
                 st.session_state.delete_recording = recording.id
+                st.rerun()
+
+        # 删除确认弹窗 - 显示在按钮下方
+        if st.session_state.get('delete_recording') == recording.id:
+            st.markdown("---")
+            # 创建一个带边框的警告框
+            st.markdown("""
+            <div style='
+                background-color: #fff3cd;
+                border: 2px solid #ffc107;
+                border-radius: 8px;
+                padding: 15px;
+                margin: 10px 0;
+            '>
+                <h4 style='color: #856404; margin: 0 0 10px 0;'>⚠️ 确认删除</h4>
+            </div>
+            """, unsafe_allow_html=True)
+
+            st.error(f"**确定要删除此评分吗？**")
+
+            delete_col1, delete_col2 = st.columns([2, 1])
+            with delete_col1:
+                st.write(f"📋 演奏者：**{recording.performer_name}**")
+                st.write(f"📁 文件：**{recording.original_filename}**")
+                st.caption("⚠️ 删除后将无法恢复，文件也会被永久删除！")
+
+            with delete_col2:
+                if st.button("🗑️ 确认删除", key=f"confirm_delete_{recording.id}", type="primary", use_container_width=True):
+                    try:
+                        with get_db_session() as db:
+                            delete_recording(db, recording.id)
+                            if os.path.exists(recording.audio_path):
+                                os.remove(recording.audio_path)
+                            st.success("✅ 删除成功！")
+                            st.session_state.delete_recording = None
+                            st.rerun()
+                    except Exception as e:
+                        st.error(f"❌ 删除失败：{e}")
+
+                if st.button("❌ 取消", key=f"cancel_delete_{recording.id}", use_container_width=True):
+                    st.session_state.delete_recording = None
+                    st.rerun()
+
+            st.markdown("---")
 
         # 第二行：评分结果
         if score_data:
@@ -524,11 +569,13 @@ def render_recording_item(recording):
             with score_col3:
                 st.metric("音准误差", f"{score_data['pitch_error']} Hz")
             with score_col4:
-                # 显示整体速度误差，如果有的话
-                if 'rhythm_stability_error' in score_data:
-                    st.metric("节奏稳定性", f"{score_data.get('rhythm_stability_error', 0):.3f}s")
+                # 显示节奏稳定性误差，兼容旧数据
+                stability_error = score_data.get('rhythm_stability_error')
+                if stability_error is not None:
+                    st.metric("节奏稳定性", f"{stability_error:.3f}s")
                 else:
-                    st.metric("节奏误差", f"{score_data['rhythm_error']}")
+                    # 旧数据，显示原来的节奏误差
+                    st.metric("节奏误差", f"{score_data.get('rhythm_error', 0)}")
 
             # 评语建议
             if score_data['suggestions']:
@@ -627,10 +674,6 @@ def render_recording_item(recording):
     if st.session_state.get('edit_recording') == recording.id:
         render_edit_recording_form(recording)
 
-    # 处理删除
-    if st.session_state.get('delete_recording') == recording.id:
-        render_delete_recording_confirmation(recording)
-
 def render_edit_recording_form(recording):
     """渲染编辑评分表单"""
     st.subheader(f"编辑评分：{recording.performer_name}")
@@ -659,33 +702,6 @@ def render_edit_recording_form(recording):
             st.session_state.edit_recording = None
             st.rerun()
 
-def render_delete_recording_confirmation(recording):
-    """渲染删除确认对话框"""
-    st.warning(f"确认删除评分：{recording.performer_name} - {recording.original_filename}？")
-    st.caption("⚠️ 删除后将无法恢复，文件也会被永久删除")
-
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("确认删除", key=f"confirm_delete_recording_{recording.id}", type="primary"):
-            try:
-                with get_db_session() as db:
-                    # 删除数据库记录
-                    delete_recording(db, recording.id)
-
-                    # 删除文件
-                    if os.path.exists(recording.audio_path):
-                        os.remove(recording.audio_path)
-
-                    st.success("删除成功！")
-                    st.session_state.delete_recording = None
-                    st.rerun()
-            except Exception as e:
-                st.error(f"删除失败：{e}")
-
-    with col2:
-        if st.button("取消", key=f"cancel_delete_recording_{recording.id}"):
-            st.session_state.delete_recording = None
-            st.rerun()
 
 def get_recording_count(song_name: str) -> int:
     """获取曲目的评分数量"""

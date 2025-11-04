@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3423c58a-7d4e-4d07-9db6-1009017b5baf" name="Changes" comment="1.7">
-      <change afterPath="$PROJECT_DIR$/test2/Clarinet_20251030_014218_茉莉花-clarinetti-quickly.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/Clarinet_20251030_014218_茉莉花-clarinetti-slow.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2/标准音频_t1_Clarinet.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/music_evaluator.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/data/music_evaluator.db-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/compare_audio2.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/compare_audio2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/recording_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/recording_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761836993697</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="1.7">
+      <option name="closed" value="true" />
+      <created>1762187700087</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1762187700087</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
